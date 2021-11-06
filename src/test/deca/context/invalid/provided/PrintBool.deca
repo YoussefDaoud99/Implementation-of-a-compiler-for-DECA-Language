@@ -1,0 +1,6 @@
+// DESCRIPTION : Print d'un Boolean
+//RESULTAT: Print argument is not printable (3.31) 
+{
+    boolean a;
+    print(a);
+}

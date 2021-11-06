@@ -1,0 +1,122 @@
+	TSTO #28
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #25
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 20(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 21(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 22(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 23(GB)
+	LOAD code.Fibonacci.calcFibo, R0
+	STORE R0, 24(GB)
+; Main program
+; Declaration des variables:
+	NEW #1, R15
+	BOV HeapOverFlowException
+	LEA 22(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.Fibonacci
+	POP R15
+	STORE R15, 25(GB)
+	TSTO #4
+	BOV StackOverflowException
+	ADDSP #2
+	LOAD #10, R15
+	PUSH R15
+	PUSH R15
+	LOAD 25(GB), R15
+	PUSH R15
+	LOAD 0(R15), R15
+	BSR 2(R15)
+	LOAD R0, R15
+	SUBSP #2
+	POP R0
+	STORE R0, 26(GB)
+; Beginning of main instructions:
+	LOAD 26(GB), R1
+	WINT
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.Fibonacci:
+	LOAD -2(LB), R1
+	RTS
+code.Fibonacci.calcFibo:
+	PUSH R15
+	LOAD #0, R15
+	POP R0
+	STORE R0, 27(GB)
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	STORE R0, 28(GB)
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	STORE R0, 30(GB)
+cond1:
+	PUSH R15
+	LOAD 30(GB), R15
+	PUSH R15
+	LOAD -3(LB), R15
+	POP R0
+	CMP R15, R0
+	SLE R15
+	CMP #0, R15
+	BEQ endWhile1
+	PUSH R15
+	LOAD 28(GB), R15
+	STORE R15, 29(GB)
+	LOAD 28(GB), R15
+	PUSH R15
+	LOAD 27(GB), R15
+	POP R0
+	ADD R15, R0
+	LOAD R0, R15
+	STORE R15, 28(GB)
+	LOAD 29(GB), R15
+	STORE R15, 27(GB)
+	LOAD 30(GB), R15
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	ADD R15, R0
+	LOAD R0, R15
+	STORE R15, 30(GB)
+	BRA cond1
+endWhile1:
+	LOAD 28(GB), R15
+	POP R0
+	LOAD R0, R0
+	BRA fin.Fibonacci.calcFibo
+fin.Fibonacci.calcFibo:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

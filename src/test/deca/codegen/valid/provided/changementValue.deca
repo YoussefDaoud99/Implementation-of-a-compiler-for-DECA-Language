@@ -1,0 +1,8 @@
+{
+boolean a = true;
+int b = 2;
+a = false;
+b = 3;
+b = 5;
+print(b);
+}

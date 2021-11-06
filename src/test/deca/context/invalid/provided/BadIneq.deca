@@ -1,0 +1,7 @@
+// DESCRIPTION: Opération d'inequilité entre des types autre que Int et Float
+// RESULTAT: BadIneq.deca:6:13: Inequality is not available for non-numbers ! (3.33)
+{
+	boolean a = true;
+	boolean b = false;
+	boolean c = (a > b);
+}

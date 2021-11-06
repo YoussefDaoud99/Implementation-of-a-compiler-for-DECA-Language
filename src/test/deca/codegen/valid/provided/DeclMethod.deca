@@ -1,0 +1,11 @@
+class Group49 extends Object{
+  int getNumGroupe(){
+    return 9;
+  }
+  int getNum(){
+    return 49;
+  }
+}
+{
+  Group49 grp = new Group49();
+}

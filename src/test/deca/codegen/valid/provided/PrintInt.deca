@@ -1,0 +1,5 @@
+// DESCRIPTION : Print d'un int
+{
+    int i = 42;
+    print(i);
+}

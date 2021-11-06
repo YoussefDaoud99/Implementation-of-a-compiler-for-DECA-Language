@@ -1,0 +1,13 @@
+// Descrption : on essaye d'heriter plusieurs class 
+// Resultats :
+//
+
+class A {
+	protected int x ;
+	}
+
+class B extends A {}
+
+class C extends B {}
+
+class D extends C {}

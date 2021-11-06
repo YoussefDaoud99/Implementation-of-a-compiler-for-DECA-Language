@@ -1,0 +1,7 @@
+// DESCRIPTION : Opération avec operands de différents types
+// RESULTAT: Types supported bye arithmetic operations are float and int ! (3.33)
+{
+    float a;
+    boolean b;
+    println(a + b);
+}

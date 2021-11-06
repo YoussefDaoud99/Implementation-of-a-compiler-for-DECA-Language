@@ -1,0 +1,4 @@
+// DESCRIPTION: Opération binaire sans Left Operand
+{
+  a = && false;
+}

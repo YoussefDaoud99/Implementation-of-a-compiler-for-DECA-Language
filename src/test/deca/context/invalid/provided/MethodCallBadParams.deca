@@ -1,0 +1,13 @@
+// DESCRIPTION: Nombre de paramètres erronés sur un MethodeCall
+// RESULTAT: MethodCallBadParams.deca:10:10: Argument number doesn't match with method signature ! (3.72)
+
+class alpha{
+        void set(int a, float b){
+}
+}
+{
+	int c;
+        alpha a = new alpha();
+        a.set(c);
+}
+

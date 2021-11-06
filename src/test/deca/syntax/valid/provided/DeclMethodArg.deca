@@ -1,0 +1,11 @@
+// DESCRIPTION: déclaration de methodes de différents types avec des arguement mais qui ne retournent rien
+class alpha{
+        void get(int a){
+}
+        int set(int a, float b){
+}
+        float bet(int a, float b, boolean c){
+}
+        boolean let(alpha a, int b, float c, boolean c){
+}
+}

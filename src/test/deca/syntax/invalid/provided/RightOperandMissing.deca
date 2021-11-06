@@ -1,0 +1,5 @@
+// DESCRIPTIION: Opération binaire sans LeftOperand
+// RESULTAT:
+{
+  a = true ||  ;
+}

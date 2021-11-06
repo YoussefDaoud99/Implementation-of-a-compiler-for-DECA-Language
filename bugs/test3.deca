@@ -1,0 +1,11 @@
+// Ligne 9 : Erreur contextuelle
+// La methode 'f' masque le champ de meme nom
+
+class A {
+   int f;
+}
+
+class B extends A {
+   int f() { }
+}
+

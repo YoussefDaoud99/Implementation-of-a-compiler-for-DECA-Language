@@ -1,0 +1,10 @@
+// DESCRIPTION : Opérations arithmétiques sur des entiers
+{
+    int i = 12;
+    int j = 13;
+    int a = i + j;
+    int b = i - j;
+    int c = i * j;
+    int e = i / j;
+    int f = i % j;
+}

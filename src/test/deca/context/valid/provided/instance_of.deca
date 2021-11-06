@@ -1,0 +1,20 @@
+// Descrption : on essaye d'utiliser instance of dans un main
+// Resultats :
+//
+
+class A {
+	int a = 3;
+}
+class B extends A {
+	int b= 4;
+}
+class C extends B {
+	int a =5;
+}
+{
+	B b = new B();
+	if (b instanceof B) {
+
+		println("je suis un test correct");
+	}
+}

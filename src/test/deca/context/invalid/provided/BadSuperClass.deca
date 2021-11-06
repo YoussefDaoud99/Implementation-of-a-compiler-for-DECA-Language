@@ -1,0 +1,4 @@
+// DESCRIPTION: Déclaration d'une  classe avec une classe mère qui n'existe pas
+// RESULTAT: BadSuperClass.deca:3:0: Super class must exist ! (1.3)
+class A extends B{
+}

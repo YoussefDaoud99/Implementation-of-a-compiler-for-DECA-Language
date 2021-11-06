@@ -1,0 +1,5 @@
+// DESCRIPTION : Utilisation de not sur un boolean
+{
+    boolean a = true;
+    boolean nota = !a;
+}

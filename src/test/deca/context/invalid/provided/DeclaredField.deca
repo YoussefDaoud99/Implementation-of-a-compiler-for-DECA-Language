@@ -1,0 +1,6 @@
+// DESCRIPTION: Déclaration d'un champ existant
+// RESULTAT:DeclaredField.deca:5:7: field already declared ! (2.5)
+class alpha{
+	protected int a;
+	float a;
+}

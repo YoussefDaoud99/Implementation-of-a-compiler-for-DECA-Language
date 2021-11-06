@@ -1,0 +1,5 @@
+class test{
+  protected float a = true;
+  public int c = 4;
+  protected bool b = true ;
+  }

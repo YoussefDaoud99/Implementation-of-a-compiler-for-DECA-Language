@@ -1,0 +1,9 @@
+{
+float x;
+x = readFloat();
+if (x >= 0.0 && x <= 5.0) {
+print("x est dans l’intervalle [0.0, 5.0]");
+} else {
+print("x n’est pas dans l’intervalle [0.0, 5.0]");
+}
+}

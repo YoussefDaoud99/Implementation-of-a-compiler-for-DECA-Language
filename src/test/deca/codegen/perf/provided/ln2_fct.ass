@@ -1,0 +1,183 @@
+	TSTO #19
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #11
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Polyexp.pexp, R0
+	STORE R0, 5(GB)
+; Main program
+; Declaration des variables:
+	NEW #1, R3
+	BOV HeapOverFlowException
+	LEA 3(GB), R0
+	STORE R0, 0(R3)
+	PUSH R3
+	BSR init.Polyexp
+	POP R3
+	STORE R3, 6(GB)
+	LOAD #0x0.0p0, R3
+	STORE R3, 7(GB)
+	LOAD #0x1.0p0, R3
+	STORE R3, 8(GB)
+	LOAD #0x1.0p0, R3
+	OPP R3, R3
+	STORE R3, 9(GB)
+	LOAD #0x1.6fc2ecp-1, R3
+	STORE R3, 10(GB)
+; Beginning of main instructions:
+cond1:
+	LOAD 8(GB), R3
+	LOAD 7(GB), R4
+	LOAD #0x1.0p-23, R5
+	ADD R5, R4
+	CMP R4, R3
+	SGE R3
+	CMP #0, R3
+	BEQ endWhile1
+	TSTO #4
+	BOV StackOverflowException
+	ADDSP #2
+	LOAD 7(GB), R4
+	LOAD 8(GB), R5
+	ADD R5, R4
+	LOAD #0x1.0p1, R5
+	LOAD R5, R5
+	CMP #0x0.0p0, R5
+	BEQ DivisionByZeroException
+	DIV R5, R4
+	STORE R4, 11(GB)
+	PUSH R3
+	LOAD 6(GB), R4
+	PUSH R4
+	LOAD 0(R4), R4
+	BSR 2(R4)
+	LOAD R0, R4
+	SUBSP #2
+	STORE R4, 12(GB)
+	LOAD #0x0.0p0, R4
+	CMP R4, R3
+	SGT R3
+	CMP #0, R3
+	BEQ elseInst1
+	LOAD 11(GB), R4
+	STORE R4, 8(GB)
+	LOAD 12(GB), R4
+	STORE R4, 10(GB)
+	BRA end1
+elseInst1:
+	LOAD 11(GB), R4
+	STORE R4, 7(GB)
+	LOAD 12(GB), R4
+	STORE R4, 9(GB)
+end1:
+	BRA cond1
+endWhile1:
+	LOAD 7(GB), R1
+	WFLOAT
+	WSTR " = "
+	LOAD 7(GB), R1
+	WFLOATX
+	WNL
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.Polyexp:
+	LOAD -2(LB), R1
+	RTS
+code.Polyexp.pexp:
+	LOAD -3(LB), R4
+	LOAD -3(LB), R5
+	LOAD -3(LB), R6
+	LOAD -3(LB), R7
+	LOAD -3(LB), R8
+	LOAD -3(LB), R9
+	LOAD -3(LB), R10
+	LOAD #0x1.0p0, R11
+	LOAD #0x1.3bp12, R12
+	LOAD R12, R12
+	CMP #0x0.0p0, R12
+	BEQ DivisionByZeroException
+	DIV R12, R11
+	MUL R11, R10
+	LOAD #0x1.0p0, R11
+	LOAD #0x1.68p9, R12
+	LOAD R12, R12
+	CMP #0x0.0p0, R12
+	BEQ DivisionByZeroException
+	DIV R12, R11
+	ADD R11, R10
+	MUL R10, R9
+	LOAD #0x1.0p0, R10
+	LOAD #0x1.ep6, R11
+	LOAD R11, R11
+	CMP #0x0.0p0, R11
+	BEQ DivisionByZeroException
+	DIV R11, R10
+	ADD R10, R9
+	MUL R9, R8
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.8p4, R10
+	LOAD R10, R10
+	CMP #0x0.0p0, R10
+	BEQ DivisionByZeroException
+	DIV R10, R9
+	ADD R9, R8
+	MUL R8, R7
+	LOAD #0x1.0p0, R8
+	LOAD #0x1.8p2, R9
+	LOAD R9, R9
+	CMP #0x0.0p0, R9
+	BEQ DivisionByZeroException
+	DIV R9, R8
+	ADD R8, R7
+	MUL R7, R6
+	LOAD #0x1.0p0, R7
+	LOAD #0x1.0p1, R8
+	LOAD R8, R8
+	CMP #0x0.0p0, R8
+	BEQ DivisionByZeroException
+	DIV R8, R7
+	ADD R7, R6
+	MUL R6, R5
+	LOAD #0x1.0p0, R6
+	ADD R6, R5
+	MUL R5, R4
+	LOAD #1, R5
+	FLOAT R5, R5
+	SUB R5, R4
+	LOAD R4, R0
+	BRA fin.Polyexp.pexp
+fin.Polyexp.pexp:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

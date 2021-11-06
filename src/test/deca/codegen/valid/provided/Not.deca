@@ -1,0 +1,5 @@
+// DESCRIPTION: test sur UnaryNot
+{
+  boolean a = true;
+  boolean b = !a;
+}

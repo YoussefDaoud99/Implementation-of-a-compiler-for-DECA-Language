@@ -1,0 +1,5 @@
+// DESCRIPTION : Print avec des guillemets echappées
+// RESULTAT:
+{
+    print("il a murmuré \"J'adore JAVA !\"");
+}

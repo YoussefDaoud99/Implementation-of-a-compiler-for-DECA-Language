@@ -1,0 +1,13 @@
+// Description:
+//    un programme qui inclue un autre programme
+//
+// Resultats:
+//    correct
+//
+// Historique:
+//    cree le 01/01/2021
+#include "basic.decah"
+{
+    println("hello world was included");
+
+}

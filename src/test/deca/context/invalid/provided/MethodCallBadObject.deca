@@ -1,0 +1,10 @@
+// DESCRIPTION: Faire un methode call sur un objet qui n'est pas une classe
+// RESULTAT: MethodCallBadObject.deca:9:1: Object must be a class type ! (3.71)
+class alpha{
+	void set(){
+}
+}
+{
+	int a;
+	a.set();
+}

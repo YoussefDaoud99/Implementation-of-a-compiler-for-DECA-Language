@@ -1,0 +1,4 @@
+// DESCRIPTION: Déclaration d'un field sans type
+class alpha{
+	protected b;
+}

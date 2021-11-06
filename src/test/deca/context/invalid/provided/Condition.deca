@@ -1,0 +1,8 @@
+// DESCRIPTION : Condition non booléene
+//RESULTAT: Condition.deca:4:8: Condition must be boolean ! (3.29)
+{
+    int i = 3;
+    if (i){
+    println("(ツ)");
+    }
+}

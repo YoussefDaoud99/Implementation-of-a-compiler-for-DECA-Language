@@ -1,0 +1,183 @@
+	TSTO #41
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #35
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 30(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 31(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 32(GB)
+	PUSH R15
+	LOAD code.Object.equals, R0
+	STORE R0, 33(GB)
+	LOAD code.A.getX, R0
+	STORE R0, 34(GB)
+	LOAD code.A.getY, R0
+	STORE R0, 35(GB)
+	LOAD code.A.getZ, R0
+	STORE R0, 36(GB)
+	LOAD code.A.getT, R0
+	STORE R0, 37(GB)
+; Main program
+; Declaration des variables:
+	PUSH R15
+	NEW #5, R15
+	BOV HeapOverFlowException
+	LEA 32(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.A
+	POP R15
+	POP R0
+	STORE R0, 38(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	PUSH R15
+	LOAD 38(GB), R15
+	PUSH R15
+	LOAD 0(R15), R15
+	BSR 2(R15)
+	LOAD R0, R15
+	SUBSP #1
+	POP R0
+	STORE R0, 39(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	PUSH R15
+	LOAD 38(GB), R15
+	PUSH R15
+	LOAD 0(R15), R15
+	BSR 3(R15)
+	LOAD R0, R15
+	SUBSP #1
+	POP R0
+	STORE R0, 40(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	PUSH R15
+	LOAD 38(GB), R15
+	PUSH R15
+	LOAD 0(R15), R15
+	BSR 4(R15)
+	LOAD R0, R15
+	SUBSP #1
+	POP R0
+	STORE R0, 41(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	PUSH R15
+	LOAD 38(GB), R15
+	PUSH R15
+	LOAD 0(R15), R15
+	BSR 5(R15)
+	LOAD R0, R15
+	SUBSP #1
+	POP R0
+	STORE R0, 42(GB)
+; Beginning of main instructions:
+	LOAD 39(GB), R1
+	WINT
+	LOAD 40(GB), R1
+	WINT
+	LOAD 41(GB), R1
+	WINT
+	LOAD 42(GB), R1
+	WINT
+	WNL
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.A:
+	LOAD -2(LB), R1
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+	PUSH R15
+	LOAD #3, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+	PUSH R15
+	LOAD #4, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 4(R1)
+	RTS
+	RTS
+code.A.getX:
+	PUSH R15
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	POP R0
+	LOAD R0, R0
+	BRA fin.A.getX
+fin.A.getX:
+	RTS
+code.A.getY:
+	PUSH R15
+	LOAD -2(LB), R15
+	LOAD 2(R15), R15
+	POP R0
+	LOAD R0, R0
+	BRA fin.A.getY
+fin.A.getY:
+	RTS
+code.A.getZ:
+	PUSH R15
+	LOAD -2(LB), R15
+	LOAD 3(R15), R15
+	POP R0
+	LOAD R0, R0
+	BRA fin.A.getZ
+fin.A.getZ:
+	RTS
+code.A.getT:
+	PUSH R15
+	LOAD -2(LB), R15
+	LOAD 4(R15), R15
+	POP R0
+	LOAD R0, R0
+	BRA fin.A.getT
+fin.A.getT:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

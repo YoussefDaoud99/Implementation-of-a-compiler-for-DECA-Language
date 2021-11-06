@@ -1,0 +1,12 @@
+
+class A{
+  int a;
+
+  void setNum(int a){
+    this.a = a;
+  }
+
+  void incrementeNum(){
+    this.a = this.a + 1;
+  }
+}

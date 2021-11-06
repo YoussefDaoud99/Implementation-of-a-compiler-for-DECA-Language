@@ -1,0 +1,26 @@
+// DESCRIPTION : IfThenElse Imbriqué
+// RESULTAT : Yes you did it
+
+
+{
+  if ((2==2) && (3<4)){
+    if ((!true) || (2 > 3)){
+      print("What are you doing here");
+    }
+    else if ((-2 > -1)){
+      print("Go away !!");
+    }
+    else{
+      if (!(!(true))){
+        if((2 == 2.00)){
+          if (1 > 2){
+            print("I said Go");
+          }
+          else{
+          print("Yes you did it");
+        }
+      }
+    }
+  }
+}
+}

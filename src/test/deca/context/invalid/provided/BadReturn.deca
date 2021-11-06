@@ -1,0 +1,9 @@
+// DECRIPTION: Faire un return d'un type différent du type déclaré
+// RESULTAT: BadReturn.deca:6:9: Incompatible types ! (3.28)
+
+class alpha{
+	boolean get(){
+		return 12;
+	}
+}
+

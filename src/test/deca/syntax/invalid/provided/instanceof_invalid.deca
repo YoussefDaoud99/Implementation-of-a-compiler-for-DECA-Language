@@ -1,0 +1,8 @@
+class test{
+  protected float a = 1.6;
+
+  }
+{
+boolean c ;
+ c = A instanceof null ;
+}

@@ -1,0 +1,6 @@
+// DESCRIPTION : Not d'un entier
+//RESULTAT: Unary not is not defined for this type (3.37)
+{
+  int a = 2;
+  int b = !2;
+}

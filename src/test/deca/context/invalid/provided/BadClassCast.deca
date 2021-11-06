@@ -1,0 +1,13 @@
+// DESCRIPTION: Cast d'un objet en une classe qui n'est pas une sous classe ou une mère classe de sa mère
+// RESULTAT: BadClassCast.deca:9:5: Incompatible types for cast ! (3.39)
+class A{
+}
+class B{
+}
+{
+	A a = new A();
+	B b;
+	b = (B) (a);
+}
+
+

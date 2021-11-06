@@ -1,0 +1,10 @@
+// DESCRIPTION: redefinir une méthode avec une signature différente
+// RESULTAT: BadRedefinedMethod.deca:8:1: Redefined method must have the same signature of the inherited method ! (2.7)
+class alpha{
+	void set(int a, float b){
+}
+}
+class beta extends alpha{
+	void set(int a){
+}
+}

@@ -1,0 +1,91 @@
+// DESCRIPTION : Test with multiple classes, methods and fields
+//RESULTAT : 12233344
+
+
+class X{
+    int x = 1;
+    int xx =11;
+    int xxx = 111;
+    int getX(){
+      return this.x;
+    }
+
+    int getXX(){
+      return this.xx;
+    }
+
+    int getXXX(){
+      return this.xxx;
+    }
+}
+
+
+class Y{
+    int y = 2;
+    int yy = 22;
+    int yyy = 222;
+
+    int getY(){
+      return this.y ;
+    }
+
+    int getYY(){
+      return this.yyy ;
+    }
+
+    int getYYY(){
+      return this.yyy ;
+    }
+}
+
+
+class Z{
+    int z = 3;
+    int zz = 33;
+    int zzz = 333;
+
+    int getZ(){
+      return this.z;
+    }
+
+    int getZZ(){
+      return this.zz;
+    }
+
+    int getZZZ(){
+      return this.zzz;
+    }
+}
+
+
+class T{
+    int t = 4;
+    int tt = 44;
+    int ttt = 444;
+
+    int getT(){
+      return this.t;
+    }
+
+    int getTT(){
+      return this.tt;
+    }
+
+    int getTTT(){
+      return this.ttt;
+    }
+}
+
+
+{
+
+X x = new X();
+Y y = new Y();
+Z z = new Z();
+T t = new T();
+int a = x.getX();
+int b = y.getYY();
+int c = z.getZZZ();
+int d = t.getTT();
+println(a, b, c, d);
+}

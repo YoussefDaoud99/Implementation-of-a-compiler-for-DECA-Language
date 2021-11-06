@@ -1,0 +1,12 @@
+// DESCRIPTION: Faire un methode call sur une méthode qui n'existe pas
+// RESULTAT: MethodCallNotDefined.deca:9:10: Method is not defined (3.71)
+
+class alpha{
+        void set(){
+}
+}
+{
+        alpha a = new alpha();
+        a.get();
+}
+

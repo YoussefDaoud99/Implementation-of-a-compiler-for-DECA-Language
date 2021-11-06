@@ -1,0 +1,4 @@
+// DESCRIPTION : readInt d'un boolean
+{
+    boolean a = readInt();
+}

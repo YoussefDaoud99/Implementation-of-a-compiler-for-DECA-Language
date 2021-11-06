@@ -1,0 +1,40 @@
+	TSTO #196
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	STORE R0, 255(GB)
+; Beginning of main instructions:
+cond6:
+	PUSH R15
+	LOAD 255(GB), R15
+	CMP #0, R15
+	BEQ endWhile6
+	WSTR "(ツ)"
+	PUSH R15
+	LOAD #0, R15
+	STORE R15, 255(GB)
+	WSTR "(ツ) (ツ)"
+	BRA cond6
+endWhile6:
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

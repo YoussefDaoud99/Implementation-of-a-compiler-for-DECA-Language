@@ -1,0 +1,11 @@
+// DESCRIPTION: une selection sur un champ protégé
+// RESULTAT: ProtectedField.deca:8:16: Cannot select a field in main ! (3.66)
+
+class alpha{
+       protected int a;
+}
+{
+        alpha c = new alpha();
+        int b = c.a;
+}
+

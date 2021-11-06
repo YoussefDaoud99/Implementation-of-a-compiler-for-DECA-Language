@@ -1,0 +1,12 @@
+// Descrption : on essaye d'affecter la valeur 1 a aun attribut :
+//
+//
+
+class A {
+	int x;
+}
+
+{
+    A a = new A();
+    a.x = 1;
+}

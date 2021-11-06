@@ -1,0 +1,9 @@
+// Descrption : on essaye de tester la compatibilité d'un type de retour d'une methode
+//
+
+class A {
+	protected int x ;
+	int getX() {
+		return x ;
+	}
+}

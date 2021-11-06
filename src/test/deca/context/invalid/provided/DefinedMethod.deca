@@ -1,0 +1,12 @@
+// DESCRIPTION: Définir la même méthode deux fois dans une classe 
+// RESULTAT: 
+
+class A {
+	protected int test ;
+ 	void set(int x) {
+		this.test = x ;
+	}
+	
+	void set(int x) {
+	}
+}

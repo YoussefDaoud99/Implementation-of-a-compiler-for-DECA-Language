@@ -1,0 +1,11 @@
+// DESCRIPTION: Redéfinir une méthode avec un mauvais type
+// RESULTAT:BadTypeMethod.deca:8:8: Redefined method type must be a subtype of the inherited method type ! (2.7)
+class alpha{
+        void set(int a){
+}
+}
+class beta extends alpha{
+        int set(int a){
+}
+}
+

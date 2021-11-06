@@ -1,0 +1,13 @@
+// DESCRIPTION : If-elseif-else complet avec multi intructions
+{
+    if (a) {
+        println("a");
+        println("eh oui a !");
+    } else if (b) {
+        println("b");
+        println("eh oui b !");
+    } else {
+        println("Rien");
+        println("Eh oui rien !");
+    }
+}

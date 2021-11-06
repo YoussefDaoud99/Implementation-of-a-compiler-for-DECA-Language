@@ -1,0 +1,17 @@
+// Descrption : on essaye d'effectuer un while dans une methode de class
+// Resultats :
+//
+
+class test {
+
+	 int x ;
+	 int y ;
+
+	
+	int boucle(int x , int y) {
+		while ( x > y ) {
+			x = x - 1 ;
+		}
+		return x ; 
+	}
+}

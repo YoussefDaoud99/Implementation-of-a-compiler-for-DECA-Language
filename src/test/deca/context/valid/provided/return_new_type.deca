@@ -1,0 +1,13 @@
+// Descrption : on essaye de renvoyer une variable de type class A ;
+
+class A {
+
+}
+
+class B {
+	A a = new A();
+	A test(){
+		return this.a ;
+	}
+}
+

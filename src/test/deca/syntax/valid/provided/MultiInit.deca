@@ -1,0 +1,7 @@
+// DESCRIPTION : Plusieurs initialisation
+{
+    int i , j = 2;
+    int i = 2, j = 3;
+    float l;
+    boolean a, b;
+}

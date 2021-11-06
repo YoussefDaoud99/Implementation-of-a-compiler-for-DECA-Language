@@ -1,0 +1,33 @@
+	TSTO #19
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+	LOAD #1, R14
+	STORE R14, 16(GB)
+	LOAD #0, R14
+	STORE R14, 17(GB)
+	LOAD 16(GB), R14
+	LOAD 17(GB), R15
+	CMP R15, R14
+	SEQ R14
+	STORE R14, 18(GB)
+; Beginning of main instructions:
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

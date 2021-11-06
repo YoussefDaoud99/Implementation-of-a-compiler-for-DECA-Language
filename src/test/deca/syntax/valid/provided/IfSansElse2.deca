@@ -1,0 +1,10 @@
+// DESCRIPTION : IfThenElse avec else if mais pas de else
+{
+    if (a) {
+        print("a");
+    } else if (b) {
+        print("b");
+    } else if (c) {
+        print("c");
+    }
+}

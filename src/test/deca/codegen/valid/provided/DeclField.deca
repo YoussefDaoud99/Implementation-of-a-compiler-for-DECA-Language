@@ -1,0 +1,5 @@
+class Goup49 extends Object{
+int numInt = 49;
+boolean grp = true;
+float numFloat = 49.0;
+}

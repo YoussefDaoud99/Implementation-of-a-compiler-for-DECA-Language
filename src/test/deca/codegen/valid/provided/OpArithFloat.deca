@@ -1,0 +1,9 @@
+
+{
+float a = 4;
+float b = 4.0;
+float c;
+c = 3*a + b/5 - 9;
+print(c);
+
+}

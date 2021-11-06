@@ -1,0 +1,9 @@
+// DESCRIPTION : While
+{
+    boolean a = true;
+    while (a) {
+        print("(ツ)");
+        a=false;
+        print("(ツ) (ツ)");
+    }
+}

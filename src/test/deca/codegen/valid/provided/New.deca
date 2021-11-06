@@ -1,0 +1,13 @@
+class alpha{
+int x;
+        void get(){
+                int c = 1;
+                println(c);
+//              return 2;
+        }
+}
+{
+        alpha a = new alpha();
+//        a.get();
+//      println(a.get());
+}

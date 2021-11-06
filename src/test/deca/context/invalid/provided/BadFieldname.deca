@@ -1,0 +1,9 @@
+// DESCRIPTION: Décralaration d'un champ avec un nom utilisé pour une méthode dans la superclasse
+// RESULTAT: BadFieldname.deca:7:15: Identifier already used for a method in super class (2.5)
+class alpha{
+	void toto(){
+}
+}
+class beta extends alpha{
+	protected int toto;
+}

@@ -1,0 +1,12 @@
+// Descrption :
+// test de programme lexiqual correct 
+
+//
+//
+
+class Test {
+   
+   protected boolean b;
+}
+   
+   

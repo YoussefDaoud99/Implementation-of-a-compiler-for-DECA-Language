@@ -1,0 +1,14 @@
+// DESCRIPTION: Comparaison incompatible entre 2 objets de classes
+// RESULTAT: 
+
+class A {}
+
+class B {}
+
+{
+	A a = new A() ;
+	B b = new B() ;
+	boolean c ;
+	c = (a == b) ;
+}
+

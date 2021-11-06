@@ -1,0 +1,5 @@
+// DESCRIPTION: Déclaration de variable de type void
+// RESULTAT: Illegal start of expression: void type inaccessible ! (3.17)
+{
+    void i;
+}

@@ -1,0 +1,7 @@
+// DESCRIPTION : Assignement de variables de différents types
+// RESULTATS: incompatible types ! (3.28)
+{
+   float a;
+   boolean b;
+   a = b;
+}

@@ -1,0 +1,6 @@
+// DESCRIPTION : UnaryMinus d'un boolean
+//RESULTAT: Unary Minus is not defined for this type (3.37)
+{
+    boolean b = true;
+    boolean a = -b;
+}

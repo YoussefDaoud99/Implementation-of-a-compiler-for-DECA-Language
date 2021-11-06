@@ -1,0 +1,81 @@
+	TSTO #95
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+	PUSH R15
+	LOAD #5, R15
+	POP R0
+	STORE R0, 117(GB)
+	PUSH R15
+	LOAD #20, R15
+	POP R0
+	STORE R0, 118(GB)
+; Beginning of main instructions:
+	PUSH R15
+	LOAD 117(GB), R15
+	PUSH R15
+	LOAD #5, R15
+	POP R0
+	CMP R15, R0
+	SLT R15
+	CMP #0, R15
+	BEQ elseInst27
+	WSTR "You are wrong"
+	BRA end27
+elseInst27:
+	PUSH R15
+	LOAD 117(GB), R15
+	PUSH R15
+	LOAD #5, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	CMP #0, R15
+	BEQ elseInst28
+	WSTR "I said you are wrong"
+	BRA end28
+elseInst28:
+cond4:
+	PUSH R15
+	LOAD 118(GB), R15
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	CMP #0, R15
+	BEQ endWhile4
+	PUSH R15
+	LOAD 118(GB), R15
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	SUB R15, R0
+	LOAD R0, R15
+	STORE R15, 118(GB)
+	BRA cond4
+endWhile4:
+	WSTR "Congratulations!! b = "
+	LOAD 118(GB), R1
+	WINT
+end28:
+end27:
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

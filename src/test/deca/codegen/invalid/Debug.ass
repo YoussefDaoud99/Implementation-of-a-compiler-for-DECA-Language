@@ -1,0 +1,133 @@
+	TSTO #13
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #9
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Point2D.diag, R0
+	STORE R0, 5(GB)
+	LEA 3(GB), R0
+	STORE R0, 6(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 7(GB)
+	LOAD code.Point3D.diag, R0
+	STORE R0, 8(GB)
+; Main program
+; Declaration des variables:
+	NEW #3, R3
+	BOV HeapOverFlowException
+	LEA 3(GB), R0
+	STORE R0, 0(R3)
+	PUSH R3
+	BSR init.Point2D
+	POP R3
+	STORE R3, 9(GB)
+	NEW #4, R3
+	BOV HeapOverFlowException
+	LEA 6(GB), R0
+	STORE R0, 0(R3)
+	PUSH R3
+	BSR init.Point3D
+	POP R3
+	STORE R3, 10(GB)
+; Beginning of main instructions:
+	TSTO #4
+	BOV StackOverflowException
+	ADDSP #2
+	LOAD #2, R3
+	PUSH R3
+	LOAD 10(GB), R4
+	PUSH R4
+	LOAD 0(R4), R4
+	BSR 2(R4)
+	LOAD R0, R4
+	SUBSP #2
+	WSTR "p3.z = "
+	WNL
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.Point2D:
+	LOAD -2(LB), R1
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+	RTS
+	RTS
+code.Point2D.diag:
+	LOAD -2(LB), R5
+	LOAD 1(R5), R5
+	LOAD -3(LB), R6
+	ADD R6, R5
+	STORE R5, 1(R4)
+	LOAD -2(LB), R5
+	LOAD 2(R5), R5
+	LOAD -3(LB), R6
+	ADD R6, R5
+	STORE R5, 2(R4)
+	BRA fin.Point2D.diag
+fin.Point2D.diag:
+	RTS
+init.Point3D:
+	LOAD -2(LB), R1
+	LOAD -2(LB), R0
+	PUSH R0
+	BSR init.Point2D
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+	RTS
+	RTS
+code.Point3D.diag:
+	LOAD -2(LB), R5
+	LOAD 1(R5), R5
+	LOAD -3(LB), R6
+	ADD R6, R5
+	STORE R5, 1(R4)
+	LOAD -2(LB), R5
+	LOAD 2(R5), R5
+	LOAD -3(LB), R6
+	ADD R6, R5
+	STORE R5, 2(R4)
+	LOAD -2(LB), R5
+	LOAD 3(R5), R5
+	LOAD -3(LB), R6
+	ADD R6, R5
+	STORE R5, 3(R4)
+	BRA fin.Point3D.diag
+fin.Point3D.diag:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

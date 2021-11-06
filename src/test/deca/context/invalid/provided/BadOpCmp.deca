@@ -1,0 +1,11 @@
+// DESCRIPTION: Operation de comparaison entre deux objets de deux classes différentes
+// RESULAT: BadOpCmp.deca:10:13: Incompatible types for comparaison ! (3.33)
+class A{
+}
+class B{
+}
+{
+	A a = new A();
+	B b = new B();
+	boolean c = (a == b);
+}

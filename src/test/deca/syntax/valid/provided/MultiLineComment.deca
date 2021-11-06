@@ -1,0 +1,10 @@
+// DESCRIPTION: Des commentaires multi-lignes
+/* voilà un premier
+commentaire
+aiiie
+*/
+{
+/* On ajoute
+un deuxième
+pour être sûr! */
+}

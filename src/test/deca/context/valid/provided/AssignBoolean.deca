@@ -1,0 +1,6 @@
+// DESCRIPTION : Assingnement de booleans
+{
+   boolean a;
+   boolean b = true;
+   a = b;
+}

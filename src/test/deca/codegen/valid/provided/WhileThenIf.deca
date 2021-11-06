@@ -1,0 +1,26 @@
+// DESCRIPTION : While and IfThenElse inside
+// RESULTAT : What are you doing here ?!! :/
+//            You are wrong
+//            What are you doing here ?!! :/
+//            Yes Yes you did it !
+
+{
+    boolean a = true;
+    int b = 1;
+    while (a) {
+        if (b == 2){
+          println("You are wrong");
+        }
+        else if (b > 4){
+          println("I said you are wrong");
+        }
+        else if (b == 4){
+          println("Yes Yes you did it !");
+          a = false;
+        }
+        else{
+          println("What are you doing here ?!! :/");
+        }
+        b = b + 1;
+    }
+}

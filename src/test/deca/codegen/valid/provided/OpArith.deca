@@ -1,0 +1,13 @@
+// DESCRIPTION : opérations arithmétiques simples
+// RESULTATS : 841230
+{
+    int i = 6;
+    int j = 2;
+    int a = i + j;
+    int b = i - j;
+    int c = i * j;
+    int d = i / j;
+    int e = i % j;
+    print(a, b, c, d, e);
+
+}

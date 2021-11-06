@@ -1,0 +1,3 @@
+// DESCRIPTION : test d'inclusion de fichiers
+#include "Print1.decah"
+#include "Print2.decah"

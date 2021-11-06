@@ -1,0 +1,5 @@
+// DESCRPTION: Déclaration d'une champ avec un void type
+// RESULTAT: VoidFieldType.deca:4:6: Field type must not be void ! (2.5)
+class alpha{
+	void a;
+}

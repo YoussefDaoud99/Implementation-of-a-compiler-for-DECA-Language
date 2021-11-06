@@ -1,0 +1,13 @@
+// DESCRIPTION : on test si l'heritage est bien efeectuer
+
+class pere {
+    int x = 8;
+}
+
+class fils extends pere {
+}
+
+{
+    fils b = new fils();
+    print(b.x);
+}

@@ -1,0 +1,4 @@
+// DESCRIPTION : Declaration de variable dans initialisation
+{
+    int i;
+}

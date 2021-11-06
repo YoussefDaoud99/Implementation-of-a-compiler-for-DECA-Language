@@ -1,0 +1,14 @@
+// DESCRIPTION : OPérations arithmétiques entre des FLOAT
+// Resultat : 4.00 puis 15.00
+
+{
+float a = 4.0;
+float b = 5.0;
+float c;
+c = 3*a + b/5 - 9;
+// c = 4.0
+println(c);
+c = c + 2*c + 3;
+// c = 15.0
+print(c);
+}

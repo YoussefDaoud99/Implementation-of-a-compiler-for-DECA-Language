@@ -1,0 +1,4 @@
+// DESCRIPTION : Déclaration d'un entier avec intialisation
+{
+    int i = 4;
+}

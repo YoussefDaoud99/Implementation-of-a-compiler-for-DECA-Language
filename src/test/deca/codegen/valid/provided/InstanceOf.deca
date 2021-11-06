@@ -1,0 +1,23 @@
+//DESCRIPTION : test Instanceof
+class Group49 extends Object{
+   int etudiants = 5;
+}
+
+class Team extends Object{
+  int groupe = 9;
+}
+
+{
+  Team grp = new Team();
+  Group49 Gp = new Group49();
+  if (Gp instanceof Group49){
+  println(1);
+  }else{
+  print(0);
+  }
+
+  if(grp instanceof Team){
+    println("Congratulations");
+  }
+
+}

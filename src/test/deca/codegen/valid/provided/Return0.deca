@@ -1,0 +1,14 @@
+// DESCRIPTION: test simple sur un return
+
+class alpha{
+int a=0;
+	int get(){
+		return a;
+
+}
+}
+{
+	alpha a = new alpha();
+  int b = a.get();
+	println(b);
+}

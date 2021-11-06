@@ -1,0 +1,10 @@
+// Description:
+//    inclure un fichier qui n'existe pas
+// Resultats:
+//    rien??.decah: Nom de fichier invalide
+// Historique:
+//    cree le 01/01/2021
+#include "rien??"
+{
+    println("je ne vais rien afficher");
+}

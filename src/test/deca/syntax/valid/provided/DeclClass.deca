@@ -1,0 +1,5 @@
+class Groupe49{
+	protected int i, j = 0;
+	protected int a = 3;
+}
+

@@ -1,0 +1,11 @@
+// DESCRIPTION: Déclarer une classe déjà déclarée
+// RESULTAT: DefinedClass.deca:12:0: class name is already used ! (1.3)
+
+
+
+class A {
+	protected int x ;
+}
+
+class A {
+}

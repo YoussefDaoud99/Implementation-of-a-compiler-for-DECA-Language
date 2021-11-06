@@ -1,0 +1,122 @@
+	TSTO #6
+	BOV StackOverFlowException
+	ADDSP #2
+; start main program
+; Generation du tableau des variables
+code.Object.equals:
+	LOAD #null, R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+; Main program:
+; Declaration des variables:
+	LOAD #0x0.0p0, R2
+	STORE R2, 4(GB)
+	LOAD #0x1.0p0, R2
+	STORE R2, 5(GB)
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	STORE R2, 6(GB)
+	LOAD #0x1.6fc2ecp-1, R2
+	STORE R2, 7(GB)
+; Beginning of main instructions:
+cond1:
+	LOAD 5(GB), R2
+	LOAD 4(GB), R3
+	LOAD #0x1.0p-23, R4
+	ADD R4, R3
+	CMP R3, R2
+	SGE R2
+	CMP #0, R2
+	BEQ endWhile1
+	LOAD 4(GB), R3
+	LOAD 5(GB), R4
+	ADD R4, R3
+	LOAD #0x1.0p1, R4
+	DIV R4, R3
+	STORE R3, 8(GB)
+	LOAD 8(GB), R4
+	LOAD 8(GB), R5
+	LOAD 8(GB), R6
+	LOAD 8(GB), R7
+	LOAD 8(GB), R8
+	LOAD 8(GB), R9
+	LOAD 8(GB), R10
+	LOAD #0x1.0p0, R11
+	LOAD #0x1.3bp12, R12
+	DIV R12, R11
+	MUL R11, R10
+	LOAD #0x1.0p0, R11
+	LOAD #0x1.68p9, R12
+	DIV R12, R11
+	ADD R11, R10
+	MUL R10, R9
+	LOAD #0x1.0p0, R10
+	LOAD #0x1.ep6, R11
+	DIV R11, R10
+	ADD R10, R9
+	MUL R9, R8
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.8p4, R10
+	DIV R10, R9
+	ADD R9, R8
+	MUL R8, R7
+	LOAD #0x1.0p0, R8
+	LOAD #0x1.8p2, R9
+	DIV R9, R8
+	ADD R8, R7
+	MUL R7, R6
+	LOAD #0x1.0p0, R7
+	LOAD #0x1.0p1, R8
+	DIV R8, R7
+	ADD R7, R6
+	MUL R6, R5
+	LOAD #0x1.0p0, R6
+	ADD R6, R5
+	MUL R5, R4
+	LOAD #1, R5
+	FLOAT R5, R5
+	SUB R5, R4
+	STORE R4, 9(GB)
+	LOAD 9(GB), R5
+	LOAD #0x0.0p0, R6
+	CMP R6, R5
+	SGT R5
+	CMP #0, R5
+	BEQ elseInst1
+	LOAD 8(GB), R6
+	STORE R6, 5(GB)
+	LOAD 9(GB), R7
+	STORE R7, 7(GB)
+	BRA end1
+elseInst1:
+	LOAD 8(GB), R8
+	STORE R8, 4(GB)
+	LOAD 9(GB), R9
+	STORE R9, 6(GB)
+end1:
+	BRA cond1
+endWhile1:
+	LOAD 4(GB), R1
+	WFLOAT
+	WSTR " = "
+	LOAD 4(GB), R1
+	WFLOATX
+	WNL
+	HALT
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

@@ -1,0 +1,76 @@
+	TSTO #186
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #184
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 237(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 238(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 239(GB)
+	PUSH R15
+	LOAD code.Object.equals, R0
+	STORE R0, 240(GB)
+; Main program
+; Declaration des variables:
+	PUSH R15
+	NEW #2, R15
+	BOV HeapOverFlowException
+	LEA 239(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.A
+	POP R15
+	POP R0
+	STORE R0, 241(GB)
+; Beginning of main instructions:
+	PUSH R15
+	LOAD 241(GB), R15
+	LOAD 1(R15), R15
+	PUSH R15
+	LOAD #0, R15
+	POP R0
+	CMP R15, R0
+	SEQ R15
+	CMP #0, R15
+	BEQ elseInst36
+	WSTR "je dois etre afficher"
+	WNL
+	BRA end36
+elseInst36:
+end36:
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.A:
+	LOAD -2(LB), R1
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	RTS
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

@@ -1,0 +1,15 @@
+// DESCRIPTION: test sur new
+class alpha{
+        void get(){
+	alpha a = new alpha();
+}
+        int set(){
+	new alpha();
+}
+        float bet(){
+	beta a = new beta();
+}
+        boolean let(){
+}
+}
+

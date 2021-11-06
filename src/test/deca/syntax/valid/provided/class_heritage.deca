@@ -1,0 +1,10 @@
+class A{
+
+  protected int c ;
+
+  }
+class B extends A {
+ A getx( A a){
+  return a ;
+}
+}

@@ -1,0 +1,6 @@
+// DESCRIPTION : Print de plusieurs expressions de plusieurs types
+{
+    int i = 4;
+    float j = 4.2;
+    print("i = ", i, "et j = ", j);
+}

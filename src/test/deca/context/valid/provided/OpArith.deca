@@ -1,0 +1,10 @@
+// DESCRIPTION : opérations arithmétiques simples
+{
+    int i = 4;
+    int j = 2;
+    int a = i + j;
+    int b = i - j;
+    int c = i * j;
+    int d = i / j;
+    int e = i % j;
+}

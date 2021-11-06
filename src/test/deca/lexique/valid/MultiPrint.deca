@@ -1,0 +1,7 @@
+// DESCRIPTION: Des print multiples
+{
+  print(x);
+  println(x);
+  printx(x);
+  printlnx(x);
+}

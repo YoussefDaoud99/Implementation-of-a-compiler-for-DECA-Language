@@ -1,0 +1,17 @@
+
+
+   class A {
+     int x;
+     int y;
+}
+class B extends A {
+      int z = 4;
+      }
+
+class C extends B {
+      int w = 4;
+}
+
+class D extends C {
+      int k = 4;
+}

@@ -1,0 +1,11 @@
+class A{
+  int a = 0;
+  int getA(){
+    return a;
+  }
+}
+{
+  A obj = new A();
+  int a = obj.getA();
+  print(a);
+}

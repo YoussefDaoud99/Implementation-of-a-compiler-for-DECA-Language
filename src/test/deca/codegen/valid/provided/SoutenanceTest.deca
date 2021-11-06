@@ -1,0 +1,78 @@
+// test pour bien illustrer la conformité au cahier de charge
+// Resultat :
+// ensimag WIN :)
+// Congratulation vous etes dans le bon group
+// il  reste 4
+// il  reste 3
+// il  reste 2
+// il  reste 1
+// il  reste 0
+
+class GrenobleInp{
+  int ensimag = 1;
+  int phelma = 2;
+  int getEnsimag(){
+    return this.ensimag;
+  }
+  int getPhelma(){
+    return this.phelma;
+  }
+}
+
+class Group9 extends GrenobleInp{
+  protected int nbrProf = 2;
+  int getNbrProf(){
+    return this.nbrProf;
+  }
+}
+
+class MiniGroup49 extends Group9{
+  // un nombre est  un float LOL :)
+  float nbrEtudiantEnsimag = 4.0;
+  float nbrEtudiantPhelma = 1.0;
+  float prcEtudiantEnsimag(){
+    return this.nbrEtudiantEnsimag/(this.nbrEtudiantEnsimag + this.nbrEtudiantPhelma);
+  }
+
+  float prcEtudiantPhelma(){
+    return this.nbrEtudiantPhelma/(this.nbrEtudiantEnsimag + this.nbrEtudiantPhelma);
+  }
+
+  void setNbrEtudiantEnsimag(int nbr){
+    this.nbrEtudiantEnsimag = nbr;
+  }
+}
+
+{
+  //declaration des variables
+  Group9 grpRoot;
+  MiniGroup49 grp = new MiniGroup49();
+  GrenobleInp grenoble = new GrenobleInp();
+  float imag = grp.prcEtudiantEnsimag();
+  float phel = grp.prcEtudiantPhelma();
+  int nbrEtudiant = 5;
+
+  // test de if
+  if (imag > phel){
+    println("ensimag WIN :)");
+  }
+  else{
+    println("phelma is unstoppable");
+  }
+
+
+  // test du instanceof
+  if (grp instanceof GrenobleInp){
+    println("Congratulation vous etes dans le bon group");
+  }else{
+    println("vous etes perdus :(");
+  }
+
+  // test du while
+  while(nbrEtudiant > 0){
+    nbrEtudiant = nbrEtudiant - 1;
+    println("il  reste ", nbrEtudiant);
+  }
+
+
+}

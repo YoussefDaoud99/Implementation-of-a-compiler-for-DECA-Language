@@ -1,0 +1,5 @@
+// DESCRIPTION : Print de plusieurs expressions
+// Résultat : :) ;) :D
+{
+    print("(ツ) ", "(ツ) ", "(ツ)");
+}

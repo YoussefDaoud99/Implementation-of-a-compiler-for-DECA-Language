@@ -1,0 +1,9 @@
+// DESCRIPTION : tests sur and et OR
+{
+   boolean a;
+   boolean b = true;
+   boolean c = false;
+   a = c;   
+   a = (b && c);
+   a = (b || c);
+}

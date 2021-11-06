@@ -1,0 +1,9 @@
+// Description : Déclaration d'une méthode avec un nom déjà utilisé
+// Resultat : BadMethodName.deca:7:5: Identifier already used ! (2.6)
+
+class A {
+	void set(){
+}
+	int set(){
+}
+}

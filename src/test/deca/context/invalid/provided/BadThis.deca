@@ -1,0 +1,6 @@
+//DESCRIPTION: Utilisation de this in main
+// RESULTAT: BadThis.deca:4:1: Cannot use 'this' in main ! (3.43)
+
+{
+	this;
+}

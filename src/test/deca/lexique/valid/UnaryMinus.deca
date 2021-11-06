@@ -1,0 +1,5 @@
+// DESCRIPTION : Unary Minus sur un int et un float
+{
+    int i = - 4;
+    float f = - 4.2;
+}

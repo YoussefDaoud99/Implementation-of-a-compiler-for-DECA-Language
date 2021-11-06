@@ -1,0 +1,12 @@
+// DESCRIPTION: Mauvais assigenement pour des class
+// RESULTAT: badAssignClass.deca:9:11: Right type is not a subtype of the left type ! (3.28)
+
+class alpha{
+}
+class beta{
+}
+{
+	alpha a = new alpha();
+	alpha b = new beta();
+	a = b;
+}

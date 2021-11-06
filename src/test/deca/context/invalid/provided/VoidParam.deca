@@ -1,0 +1,6 @@
+// DESCRIPTION: Déclaration d'un paramètre de type void
+// RESULTAT: VoidParam.deca:4:10: Parameter type can't be void ! (2.9)
+class alpha{
+	void set(void a){
+}
+}

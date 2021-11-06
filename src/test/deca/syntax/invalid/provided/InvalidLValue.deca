@@ -1,0 +1,5 @@
+// DESCRIPTION : Lvalue invalide
+// RESULTAT: left-hand side of assignment is not an lvalue
+{
+    3 = a;
+}

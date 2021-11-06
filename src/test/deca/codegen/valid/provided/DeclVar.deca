@@ -1,0 +1,6 @@
+// DESCRIPTION: Déclaration de variables
+{
+  int a = 4;
+  float b = 4.2;
+  boolean c = false;
+}

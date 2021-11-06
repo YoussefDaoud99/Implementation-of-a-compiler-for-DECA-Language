@@ -1,0 +1,20 @@
+// DESCRIPTION : IfThenElse and While inside
+
+
+{
+
+  int a = 5;
+  int b = 20;
+  if (a < 5){
+    print("You are wrong");
+    }
+  else if (a > 5){
+    print("I said you are wrong");
+  }
+  else{
+    while(b > 1){
+      b = b - 2;
+    }
+    print("Congratulations!! b = ", b);
+  }
+}

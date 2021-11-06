@@ -1,0 +1,107 @@
+	TSTO #64
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+; Beginning of main instructions:
+	LOAD #4, R15
+	PUSH R15
+	LOAD #3, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	CMP #0, R15
+	BEQ elseInst7
+	WSTR "GREATER PASSED !!"
+	WNL
+	BRA end7
+elseInst7:
+end7:
+	PUSH R15
+	LOAD #4, R15
+	PUSH R15
+	LOAD #4, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	CMP #0, R15
+	BEQ elseInst8
+	WSTR "GREATER FAILED "
+	WNL
+	BRA end8
+elseInst8:
+end8:
+	PUSH R15
+	LOAD #4, R15
+	PUSH R15
+	LOAD #5, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	CMP #0, R15
+	BEQ elseInst9
+	WSTR "GREATER FAILED "
+	WNL
+	BRA end9
+elseInst9:
+end9:
+	PUSH R15
+	LOAD #4, R15
+	PUSH R15
+	LOAD #3, R15
+	POP R0
+	CMP R15, R0
+	SLT R15
+	CMP #0, R15
+	BEQ elseInst10
+	WSTR "LOWER FAILED !!"
+	WNL
+	BRA end10
+elseInst10:
+end10:
+	PUSH R15
+	LOAD #4, R15
+	PUSH R15
+	LOAD #4, R15
+	POP R0
+	CMP R15, R0
+	SLT R15
+	CMP #0, R15
+	BEQ elseInst11
+	WSTR "LOWER FAILED :)"
+	WNL
+	BRA end11
+elseInst11:
+end11:
+	PUSH R15
+	LOAD #4, R15
+	PUSH R15
+	LOAD #5, R15
+	POP R0
+	CMP R15, R0
+	SLT R15
+	CMP #0, R15
+	BEQ elseInst12
+	WSTR "LOWER PASSED :)"
+	WNL
+	BRA end12
+elseInst12:
+end12:
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

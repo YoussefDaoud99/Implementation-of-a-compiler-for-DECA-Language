@@ -1,0 +1,15 @@
+// DESCRIPTION: déclaration de methodes de différents types mais qui retournent quelque chose
+class alpha{
+        void get(){
+}
+        int set(int a){
+        return a;
+}
+        float bet(int a, float b){
+        return a*b;
+}
+        boolean let(boolean a, boolean b){
+        return a && b;
+}
+}
+

@@ -1,0 +1,7 @@
+// DESCRIPTION : Modulo pour un float
+// RESULAT: Modulo types must be int ! (3.33
+{
+    int a;
+    float b;
+    int c = a%b;
+}

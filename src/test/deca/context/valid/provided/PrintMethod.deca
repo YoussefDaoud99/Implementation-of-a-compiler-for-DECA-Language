@@ -1,0 +1,10 @@
+class A{
+  int a = 49;
+  int getA(){
+    return a;
+  }
+}
+{
+  A object = new A();
+  print(object.getA());
+}

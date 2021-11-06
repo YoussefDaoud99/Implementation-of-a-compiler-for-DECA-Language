@@ -1,0 +1,12 @@
+// DESCRIPTION : Print Hexa Decimal
+// RESULTAT : 0x1p+2
+//            0x1.8p+1
+
+
+
+{
+float a = 4.00;
+printlnx(a);
+printx(3.00);
+
+}

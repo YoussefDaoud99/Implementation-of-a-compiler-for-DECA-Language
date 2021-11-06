@@ -1,0 +1,34 @@
+//DESCRIPTION : test class with multiple return methods and fields
+
+class A{
+
+  int x = 1;
+  int y = 2;
+  int z = 3;
+  int t = 4;
+
+  int getX(){
+    return x;
+  }
+
+  int getY(){
+    return y;
+  }
+
+  int getZ(){
+    return z;
+  }
+
+  int getT(){
+    return t;
+  }
+}
+
+{
+A a = new A();
+int x = a.getX();
+int y = a.getY();
+int z = a.getZ();
+int t = a.getT();
+println(x, y, z, t);
+}

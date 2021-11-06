@@ -1,0 +1,10 @@
+// DESCRIPTION : Opérations de comparaison binaires
+{
+    boolean a;
+    a = (true == false);
+    a = (true <= false);
+    a = (true >= false);
+    a = (true != false);
+    a = (true && false);
+    a = (true || false);
+}

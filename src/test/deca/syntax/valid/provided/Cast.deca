@@ -1,0 +1,12 @@
+// DESCRIPTION: test sur des cast
+
+class alpha{
+
+	int a = (int) (1.0);
+	int b = (int) (true);
+	//alpha b = (beta) (c);
+  //      void cast(){
+		// float a = (float) (1);
+      //   	beta b = (alpha) (c);
+					//}
+}

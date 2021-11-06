@@ -1,0 +1,7 @@
+// DESCRIPTION : While simple
+{
+    while (true) {
+        println("(ツ)");
+    }
+    
+}

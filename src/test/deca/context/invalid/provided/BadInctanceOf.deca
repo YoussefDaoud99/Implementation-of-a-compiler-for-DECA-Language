@@ -1,0 +1,8 @@
+// DESCRIPTION: utilissation incorrecte de InstanceOf
+// RESULTAT: BadInctanceOf.deca:7:27: Instanceof is used only on classes ! (3.42)
+class alpha{
+}
+{
+	alpha b = new alpha();
+	boolean a = (b instanceof int);
+}

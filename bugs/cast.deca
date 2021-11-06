@@ -1,0 +1,23 @@
+// DESCRIPTION: test simple sur le cast
+// RESULTAT: 10 10
+class Pere {
+    int age(){
+    	return 30;
+    }
+}
+class Fils extends Pere {
+   int age(){
+   return 10;
+  }
+}
+
+{
+    int pere, fils;
+    Pere c;
+    Fils b;
+    b = new Fils();
+    c = (Pere) (b);
+    pere = b.age();
+    fils = c.age();
+    println("resultat:", pere, " ",  fils);
+}

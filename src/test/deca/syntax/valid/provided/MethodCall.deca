@@ -1,0 +1,16 @@
+// DESCRIPTION: faire des methodes calls
+class alpha{
+        void get(){
+	a.get();
+}
+        int set(){
+	b.get(a);
+}
+        float bet(){
+	c.bet(a, b);
+}
+        boolean let(){
+	d.let(a, b, c);
+}
+}
+

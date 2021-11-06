@@ -1,0 +1,11 @@
+// DESCRIPTION : If-elseif-else complete
+{
+    if (a) {
+        print("a");
+    }
+    else if (b) {
+        print("b");
+    } else {
+        print("rien");
+    }
+}

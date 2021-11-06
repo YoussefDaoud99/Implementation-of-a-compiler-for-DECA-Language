@@ -1,0 +1,12 @@
+// Description:
+//    tests de programme lexicalement incorrect (inclusion impossible)
+//
+// Resultats:
+//   Bad Include File !
+//
+// Historique:
+//    cree le 01/01/2021
+#include "rien??ca"
+{
+    println("je ne vais rien afficher");
+}

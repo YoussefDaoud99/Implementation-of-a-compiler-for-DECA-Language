@@ -1,0 +1,5 @@
+// DESCRIPTION : print d'un float
+{
+    float a = 4.2;
+    print(a);
+}

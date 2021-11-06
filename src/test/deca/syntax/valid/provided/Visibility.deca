@@ -1,0 +1,7 @@
+// DESCRIPTION: visibilité des champs d'une classe
+class alpha{
+	protected int a;
+	protected float b = 1;
+	float c;
+	int d = 1;
+}

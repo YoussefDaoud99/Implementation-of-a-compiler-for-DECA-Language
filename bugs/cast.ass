@@ -1,0 +1,106 @@
+	TSTO #15
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #10
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Pere.age, R0
+	STORE R0, 5(GB)
+	LEA 3(GB), R0
+	STORE R0, 6(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 7(GB)
+	LOAD code.Fils.age, R0
+	STORE R0, 8(GB)
+; Main program
+; Declaration des variables:
+; Beginning of main instructions:
+	NEW #1, R3
+	BOV HeapOverFlowException
+	LEA 6(GB), R0
+	STORE R0, 0(R3)
+	PUSH R3
+	BSR init.Fils
+	POP R3
+	STORE R3, 12(GB)
+	LOAD 12(GB), R3
+	STORE R3, 11(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	LOAD 12(GB), R3
+	PUSH R3
+	LOAD 0(R3), R3
+	BSR 2(R3)
+	LOAD R0, R3
+	SUBSP #1
+	STORE R3, 9(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	LOAD 11(GB), R3
+	PUSH R3
+	LOAD 0(R3), R3
+	BSR 2(R3)
+	LOAD R0, R3
+	SUBSP #1
+	STORE R3, 10(GB)
+	WSTR "resultat:"
+	LOAD 9(GB), R1
+	WINT
+	WSTR " "
+	LOAD 10(GB), R1
+	WINT
+	WNL
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.Pere:
+	LOAD -2(LB), R1
+	RTS
+code.Pere.age:
+	LOAD #30, R3
+	LOAD R3, R0
+	BRA fin.Pere.age
+fin.Pere.age:
+	RTS
+init.Fils:
+	LOAD -2(LB), R1
+	RTS
+code.Fils.age:
+	LOAD #10, R3
+	LOAD R3, R0
+	BRA fin.Fils.age
+fin.Fils.age:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

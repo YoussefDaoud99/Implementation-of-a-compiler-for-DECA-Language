@@ -1,0 +1,10 @@
+{
+  boolean a = true;
+  boolean b = false;
+  if (a && b){
+  print("faux");
+  }
+  else{
+  print("vrai");
+  }
+}

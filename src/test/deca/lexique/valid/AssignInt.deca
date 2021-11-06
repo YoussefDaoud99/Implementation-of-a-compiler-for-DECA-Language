@@ -1,0 +1,5 @@
+// DESCRIPTION : Affectation d'un int à une variable
+{
+    int i;
+    i = 4;
+}

@@ -1,0 +1,13 @@
+// DESCRIPTION: Une selection sur un identificateur qui n'est pas un champ
+// RESULTAT: NonFieldSelection.deca:9:11: Selection right identifier must be a class field ! (3.70)
+
+class alpha{
+	int get(){
+		return 1;
+	}
+	int set(){
+		alpha a = new alpha();
+		int b = a.get;
+	}
+}
+

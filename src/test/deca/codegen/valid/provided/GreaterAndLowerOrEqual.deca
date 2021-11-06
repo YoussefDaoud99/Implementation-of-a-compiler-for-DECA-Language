@@ -1,0 +1,25 @@
+// DESCRITPION : Test basique de >=
+// RESULTATS : GREATER PASSED
+//             GREATER OR EQUAL PASSED AGAIN :)
+//             LOWER OR EQUAL PASSED :)
+//             LOWER OR EQUAL PASSED AGAIN :)
+{
+  if (4 >= 3){
+    println("GREATER OR EQUAL PASSED !!");
+  }
+  if (4 >= 4){
+    println("GREATER OR EQUAL PASSED AGAIN :)");
+  }
+  if (4 >= 5){
+    print("GREATER OR EQUAL FAILED :/");
+  }
+  if (4 <= 3){
+    println("LOWER OR EQUAL FAILED !!");
+  }
+  if (4 <= 4){
+    println("LOWER OR EQUAL PASSED :)");
+  }
+  if (4 <= 5){
+    println("LOWER OR EQUAL PASSED AGAIN :)");
+  }
+}

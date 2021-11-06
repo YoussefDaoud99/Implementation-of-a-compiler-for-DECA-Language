@@ -1,0 +1,14 @@
+// DESCRIPTION : Test sur beaucoup de conditions
+
+{
+  if (true && (2 == 2)){
+    if ((1 < 2) && (4 > 3)){
+      if ((5 == 5) && ((2+1) == 3)){
+        print("Congratulations");
+      }
+      else{
+        print("Yes Congratulations");
+      }
+    }
+  }
+}

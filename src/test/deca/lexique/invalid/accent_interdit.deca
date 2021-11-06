@@ -1,0 +1,6 @@
+// DESCRIPTION : utlisation d'un accent que daca ne reconnait pas
+//RESULTAT: 4:1: Character entered is illegal !
+
+{
+ é;
+}

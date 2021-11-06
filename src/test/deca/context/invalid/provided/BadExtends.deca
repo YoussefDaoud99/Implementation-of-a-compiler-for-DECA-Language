@@ -1,0 +1,6 @@
+// DESCRIPTION: heriter d'une class qui n'existe pas
+// RESULTAT: 
+
+class B extends C {
+
+}

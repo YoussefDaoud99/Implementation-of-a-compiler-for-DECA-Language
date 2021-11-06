@@ -1,0 +1,5 @@
+// DESCRIPTION : Variable déclarée sans le type
+//RESULTAT: Identifier must be declared ! (0.1)
+{
+    i = 12;
+}

@@ -1,0 +1,67 @@
+	TSTO #12
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+; Beginning of main instructions:
+	LOAD #1, R6
+	LOAD #2, R7
+	LOAD #2, R8
+	CMP R8, R7
+	SEQ R7
+	MUL R6, R7
+	CMP #0, R7
+	BEQ elseInst1
+	LOAD #1, R8
+	LOAD #2, R9
+	CMP R9, R8
+	SLT R8
+	LOAD #4, R9
+	LOAD #3, R10
+	CMP R10, R9
+	SGT R9
+	MUL R8, R9
+	CMP #0, R9
+	BEQ elseInst2
+	LOAD #5, R10
+	LOAD #5, R11
+	CMP R11, R10
+	SEQ R10
+	LOAD #2, R11
+	LOAD #1, R12
+	ADD R12, R11
+	LOAD #3, R12
+	CMP R12, R11
+	SEQ R11
+	MUL R10, R11
+	CMP #0, R11
+	BEQ elseInst3
+	WSTR "Congratulations"
+	BRA end3
+elseInst3:
+	WSTR "Yes Congratulations"
+end3:
+	BRA end2
+elseInst2:
+end2:
+	BRA end1
+elseInst1:
+end1:
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

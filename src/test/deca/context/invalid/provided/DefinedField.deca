@@ -1,0 +1,8 @@
+// DESCRIPTION: use the same name for two attribut 
+// RESULTAT: 
+
+class A {
+	 int a ;
+         float a ;
+
+}

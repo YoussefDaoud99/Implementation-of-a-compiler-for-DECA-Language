@@ -1,0 +1,11 @@
+class A{
+  int a = 3;
+  float b = (float) a;
+}
+class B extends A{
+  int  b;
+}
+{
+  A a = new A();
+  B b  = (B) (a);
+}

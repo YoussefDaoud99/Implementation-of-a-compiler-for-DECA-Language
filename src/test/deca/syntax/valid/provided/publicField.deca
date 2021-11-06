@@ -1,0 +1,13 @@
+
+
+class A{
+  int a = 5;
+
+}
+
+{
+  A object = new A();
+  int b = object.a;
+  println(b);
+
+}

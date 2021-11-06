@@ -1,0 +1,62 @@
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #36
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 42(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 43(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 44(GB)
+	PUSH R15
+	LOAD code.Object.equals, R0
+	STORE R0, 45(GB)
+; Main program
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.test:
+	LOAD -2(LB), R1
+	PUSH R15
+	LOAD #0x1.99999ap0, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	PUSH R15
+	LOAD #4, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+	RTS
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

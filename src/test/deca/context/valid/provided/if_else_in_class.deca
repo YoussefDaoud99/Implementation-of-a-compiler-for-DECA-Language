@@ -1,0 +1,16 @@
+// Descrption : on essaye d'effectuer un if_else dans une methode
+// Resultats :
+//
+
+class test {
+	protected int x ;
+	protected int y ;
+	
+	int max(int x , int y) {
+		if ( ( x > y )) {
+			return x ;		
+		}
+		else { 
+			return y ;} 
+	}
+}

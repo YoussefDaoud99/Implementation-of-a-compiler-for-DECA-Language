@@ -1,0 +1,75 @@
+	TSTO #2
+	BOV StackOverFlowException
+	ADDSP #2
+; start main program
+; Generation du tableau des variables
+code.Object.equals:
+	LOAD #null, R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+; Main program:
+; Declaration des variables:
+	LOAD #42, R2
+	STORE R2, 4(GB)
+	LOAD #0, R2
+	STORE R2, 5(GB)
+; Beginning of main instructions:
+cond1:
+	LOAD 4(GB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	SEQ R2
+	CMP #0, R2
+	SEQ R2
+	CMP #0, R2
+	BEQ endWhile1
+	LOAD 4(GB), R3
+	LOAD #2, R4
+	REM R4, R3
+	LOAD #0, R4
+	CMP R4, R3
+	SEQ R3
+	CMP #0, R3
+	BEQ elseInst1
+	LOAD 4(GB), R4
+	LOAD #2, R5
+	QUO R5, R4
+	STORE R4, 4(GB)
+	BRA end1
+elseInst1:
+	LOAD #2, R5
+	LOAD 4(GB), R6
+	MUL R6, R5
+	LOAD 4(GB), R6
+	ADD R6, R5
+	LOAD #1, R6
+	ADD R6, R5
+	STORE R5, 4(GB)
+end1:
+	LOAD 5(GB), R6
+	LOAD #1, R7
+	ADD R7, R6
+	STORE R6, 5(GB)
+	BRA cond1
+endWhile1:
+	LOAD 5(GB), R1
+	WINT
+	WNL
+	HALT
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

@@ -1,0 +1,40 @@
+; start main program
+; Generation du tableau des variables
+code.Object.equals:
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.A.getX, R0
+	STORE R0, 5(GB)
+init.A:
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	RTS
+code.A.getX:
+	LOAD -2(LB), R3
+	LOAD 1(R3), R3
+	BRA fin.A.getX
+fin.A.getX:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

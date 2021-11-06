@@ -1,0 +1,144 @@
+	TSTO #100
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #97
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 119(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 120(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 121(GB)
+	PUSH R15
+	LOAD code.Object.equals, R0
+	STORE R0, 122(GB)
+	LEA 1(GB), R0
+	STORE R0, 123(GB)
+	PUSH R15
+	LOAD code.Object.equals, R0
+	STORE R0, 124(GB)
+; Main program
+; Declaration des variables:
+	PUSH R15
+	NEW #2, R15
+	BOV HeapOverFlowException
+	LEA 123(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.Team
+	POP R15
+	POP R0
+	STORE R0, 125(GB)
+	PUSH R15
+	NEW #2, R15
+	BOV HeapOverFlowException
+	LEA 121(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.Group49
+	POP R15
+	POP R0
+	STORE R0, 126(GB)
+; Beginning of main instructions:
+	PUSH R15
+	LOAD 126(GB), R15
+	CMP #null, R15
+	BEQ ancestry.end.0
+	LEA 1(GB), R0
+ancestry.loop.0:
+	CMP R0, R15
+	BEQ instanceof.success.0
+	LOAD 0(R15), R15
+	BEQ ancestry.end.0
+	BRA ancestry.loop.0
+ancestry.end.0:
+	PUSH R15
+	LOAD #0, R15
+	BRA instanceof.end.0
+instanceof.success.0:
+	PUSH R15
+	LOAD #1, R15
+instanceof.end.0:
+	CMP #0, R15
+	BEQ elseInst29
+	LOAD #1, R1
+	WINT
+	WNL
+	BRA end29
+elseInst29:
+	LOAD #0, R1
+	WINT
+end29:
+	PUSH R15
+	LOAD 125(GB), R15
+	CMP #null, R15
+	BEQ ancestry.end.1
+	LEA 1(GB), R0
+ancestry.loop.1:
+	CMP R0, R15
+	BEQ instanceof.success.1
+	LOAD 0(R15), R15
+	BEQ ancestry.end.1
+	BRA ancestry.loop.1
+ancestry.end.1:
+	PUSH R15
+	LOAD #0, R15
+	BRA instanceof.end.1
+instanceof.success.1:
+	PUSH R15
+	LOAD #1, R15
+instanceof.end.1:
+	CMP #0, R15
+	BEQ elseInst30
+	WSTR "Congratulations"
+	WNL
+	BRA end30
+elseInst30:
+end30:
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.Group49:
+	LOAD -2(LB), R1
+	PUSH R15
+	LOAD #5, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	RTS
+	RTS
+init.Team:
+	LOAD -2(LB), R1
+	PUSH R15
+	LOAD #9, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	RTS
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

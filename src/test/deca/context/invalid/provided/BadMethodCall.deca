@@ -1,0 +1,14 @@
+// DESCRIPTION:Un méthode call sur un identificateur qui n'est pas un identificateur de méthode 
+// RESULTAT: BadMethodCall.deca:10:10: Identifier is not a method identifier ! (3.72)
+
+class alpha{
+	int beta;
+        void set(){
+}
+}
+{
+        alpha a = new alpha();
+        a.beta();
+}
+
+

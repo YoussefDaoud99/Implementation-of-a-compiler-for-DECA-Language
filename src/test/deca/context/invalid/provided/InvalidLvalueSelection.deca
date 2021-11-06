@@ -1,0 +1,10 @@
+// DESCRIPTION: Faire une selection sur un object qui n'est pas une classe
+// RESULTAT: InvalidLvalueSelection.deca:9:1: Selection LeftValue expression must be a class ! (3.65), (3.66)
+
+class alpha{
+	int a;
+	void set(){
+		int b;
+		int c = b.c;
+}
+}

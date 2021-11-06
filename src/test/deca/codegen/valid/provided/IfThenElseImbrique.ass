@@ -1,0 +1,117 @@
+	TSTO #91
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+; Beginning of main instructions:
+	PUSH R15
+	LOAD #2, R15
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	CMP R15, R0
+	SEQ R15
+	PUSH R15
+	LOAD #3, R15
+	PUSH R15
+	LOAD #4, R15
+	POP R0
+	CMP R15, R0
+	SLT R15
+	MUL R15, R15
+	CMP #0, R15
+	BEQ elseInst21
+	PUSH R15
+	LOAD #1, R15
+	CMP #0, R15
+	SEQ R15
+	PUSH R15
+	LOAD #2, R15
+	PUSH R15
+	LOAD #3, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	ADD R15, R15
+	CMP #0, R2
+	SGT R2
+	CMP #0, R15
+	BEQ elseInst22
+	WSTR "What are you doing here"
+	BRA end22
+elseInst22:
+	PUSH R15
+	LOAD #2, R15
+	OPP R15, R15
+	PUSH R15
+	LOAD #1, R15
+	OPP R15, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	CMP #0, R15
+	BEQ elseInst23
+	WSTR "Go away !!"
+	BRA end23
+elseInst23:
+	PUSH R15
+	LOAD #1, R15
+	CMP #0, R15
+	SEQ R15
+	CMP #0, R15
+	SEQ R15
+	CMP #0, R15
+	BEQ elseInst24
+	PUSH R15
+	LOAD #2, R15
+	FLOAT R15, R15
+	PUSH R15
+	LOAD #0x1.0p1, R15
+	POP R0
+	CMP R15, R0
+	SEQ R15
+	CMP #0, R15
+	BEQ elseInst25
+	PUSH R15
+	LOAD #1, R15
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	CMP R15, R0
+	SGT R15
+	CMP #0, R15
+	BEQ elseInst26
+	WSTR "I said Go"
+	BRA end26
+elseInst26:
+	WSTR "Yes you did it"
+end26:
+	BRA end25
+elseInst25:
+end25:
+	BRA end24
+elseInst24:
+end24:
+end23:
+end22:
+	BRA end21
+elseInst21:
+end21:
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

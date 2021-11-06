@@ -1,0 +1,5 @@
+// DESCRIPTION : Déclaration de variable avec un type inconnu
+//RESULTAT: Cannot find type ! (0.2)
+{
+    Ajja i = 12;
+}

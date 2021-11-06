@@ -1,0 +1,7 @@
+// DESCRIPTION : While
+// RESUTLAT :
+class A {}
+
+{
+    A a = new A();
+}

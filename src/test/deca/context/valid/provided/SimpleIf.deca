@@ -1,0 +1,6 @@
+// DESCRIPTION: Un seul If
+{
+if (true) {
+    println("(ツ)");
+}
+}

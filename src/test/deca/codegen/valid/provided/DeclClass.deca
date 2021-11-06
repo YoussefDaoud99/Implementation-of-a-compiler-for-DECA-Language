@@ -1,0 +1,3 @@
+class Group49{
+  protected int name = 49;
+}

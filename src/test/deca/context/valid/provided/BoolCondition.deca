@@ -1,0 +1,6 @@
+// DESCRIPTION : Test sur condition
+{
+    if (true  && (2==2)) {
+        print("(ツ)");
+    }
+}

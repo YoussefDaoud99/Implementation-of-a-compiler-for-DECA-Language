@@ -1,0 +1,14 @@
+class A{
+
+  protected int c ;
+  protected int b ;
+
+ 
+
+ void setb(int b) {
+   this.b = b ;
+}
+}
+
+
+ 

@@ -1,0 +1,5 @@
+// DESCRIPTION : Variable initialisé par elle-même
+// RESULTAT: AutoInit.deca:3:12: Identifier must be declared ! (0.1)
+{
+    int a = a;
+}

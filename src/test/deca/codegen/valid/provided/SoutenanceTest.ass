@@ -1,0 +1,264 @@
+	TSTO #29
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #22
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.GrenobleInp.getEnsimag, R0
+	STORE R0, 5(GB)
+	LOAD code.GrenobleInp.getPhelma, R0
+	STORE R0, 6(GB)
+	LEA 3(GB), R0
+	STORE R0, 7(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 8(GB)
+	LOAD code.GrenobleInp.getEnsimag, R0
+	STORE R0, 9(GB)
+	LOAD code.GrenobleInp.getPhelma, R0
+	STORE R0, 10(GB)
+	LOAD code.Group9.getNbrProf, R0
+	STORE R0, 11(GB)
+	LEA 7(GB), R0
+	STORE R0, 12(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 13(GB)
+	LOAD code.GrenobleInp.getEnsimag, R0
+	STORE R0, 14(GB)
+	LOAD code.GrenobleInp.getPhelma, R0
+	STORE R0, 15(GB)
+	LOAD code.Group9.getNbrProf, R0
+	STORE R0, 16(GB)
+	LOAD code.MiniGroup49.prcEtudiantEnsimag, R0
+	STORE R0, 17(GB)
+	LOAD code.MiniGroup49.prcEtudiantPhelma, R0
+	STORE R0, 18(GB)
+	LOAD code.MiniGroup49.setNbrEtudiantEnsimag, R0
+	STORE R0, 19(GB)
+; Main program
+; Declaration des variables:
+	NEW #6, R3
+	BOV HeapOverFlowException
+	LEA 12(GB), R0
+	STORE R0, 0(R3)
+	PUSH R3
+	BSR init.MiniGroup49
+	POP R3
+	STORE R3, 21(GB)
+	NEW #3, R3
+	BOV HeapOverFlowException
+	LEA 3(GB), R0
+	STORE R0, 0(R3)
+	PUSH R3
+	BSR init.GrenobleInp
+	POP R3
+	STORE R3, 22(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	LOAD 21(GB), R3
+	PUSH R3
+	LOAD 0(R3), R3
+	BSR 5(R3)
+	LOAD R0, R3
+	SUBSP #1
+	STORE R3, 23(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	LOAD 21(GB), R3
+	PUSH R3
+	LOAD 0(R3), R3
+	BSR 6(R3)
+	LOAD R0, R3
+	SUBSP #1
+	STORE R3, 24(GB)
+	LOAD #5, R3
+	STORE R3, 25(GB)
+; Beginning of main instructions:
+	LOAD 23(GB), R3
+	LOAD 24(GB), R4
+	CMP R4, R3
+	SGT R3
+	CMP #0, R3
+	BEQ elseInst1
+	WSTR "ensimag WIN :)"
+	WNL
+	BRA end1
+elseInst1:
+	WSTR "phelma is unstoppable"
+	WNL
+end1:
+	LOAD 21(GB), R4
+	CMP #null, R4
+	BEQ ancestry.end.0
+	LEA 1(GB), R0
+ancestry.loop.0:
+	CMP R0, R4
+	BEQ instanceof.success.0
+	LOAD 0(R4), R4
+	BEQ ancestry.end.0
+	BRA ancestry.loop.0
+ancestry.end.0:
+	LOAD #0, R5
+	BRA instanceof.end.0
+instanceof.success.0:
+	LOAD #1, R6
+instanceof.end.0:
+	CMP #0, R6
+	BEQ elseInst2
+	WSTR "Congratulation vous etes dans le bon group"
+	WNL
+	BRA end2
+elseInst2:
+	WSTR "vous etes perdus :("
+	WNL
+end2:
+cond1:
+	LOAD 25(GB), R7
+	LOAD #0, R8
+	CMP R8, R7
+	SGT R7
+	CMP #0, R7
+	BEQ endWhile1
+	LOAD 25(GB), R8
+	LOAD #1, R9
+	SUB R9, R8
+	STORE R8, 25(GB)
+	WSTR "il  reste "
+	LOAD 25(GB), R1
+	WINT
+	WNL
+	BRA cond1
+endWhile1:
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.GrenobleInp:
+	LOAD -2(LB), R1
+	LOAD #1, R8
+	LOAD R8, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	LOAD #2, R8
+	LOAD R8, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+	RTS
+	RTS
+code.GrenobleInp.getEnsimag:
+	LOAD -2(LB), R8
+	LOAD 1(R8), R8
+	LOAD R8, R0
+	BRA fin.GrenobleInp.getEnsimag
+fin.GrenobleInp.getEnsimag:
+	RTS
+code.GrenobleInp.getPhelma:
+	LOAD -2(LB), R8
+	LOAD 2(R8), R8
+	LOAD R8, R0
+	BRA fin.GrenobleInp.getPhelma
+fin.GrenobleInp.getPhelma:
+	RTS
+init.Group9:
+	LOAD -2(LB), R1
+	LOAD -2(LB), R0
+	PUSH R0
+	BSR init.GrenobleInp
+	LOAD #2, R8
+	LOAD R8, R0
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+	RTS
+	RTS
+code.Group9.getNbrProf:
+	LOAD -2(LB), R8
+	LOAD 3(R8), R8
+	LOAD R8, R0
+	BRA fin.Group9.getNbrProf
+fin.Group9.getNbrProf:
+	RTS
+init.MiniGroup49:
+	LOAD -2(LB), R1
+	LOAD -2(LB), R0
+	PUSH R0
+	BSR init.Group9
+	LOAD #0x1.0p2, R8
+	LOAD R8, R0
+	LOAD -2(LB), R1
+	STORE R0, 4(R1)
+	LOAD #0x1.0p0, R8
+	LOAD R8, R0
+	LOAD -2(LB), R1
+	STORE R0, 5(R1)
+	RTS
+	RTS
+code.MiniGroup49.prcEtudiantEnsimag:
+	LOAD -2(LB), R8
+	LOAD 4(R8), R8
+	LOAD -2(LB), R9
+	LOAD 4(R9), R9
+	LOAD -2(LB), R10
+	LOAD 5(R10), R10
+	ADD R10, R9
+	LOAD R9, R9
+	CMP #0x0.0p0, R9
+	BEQ DivisionByZeroException
+	DIV R9, R8
+	LOAD R8, R0
+	BRA fin.MiniGroup49.prcEtudiantEnsimag
+fin.MiniGroup49.prcEtudiantEnsimag:
+	RTS
+code.MiniGroup49.prcEtudiantPhelma:
+	LOAD -2(LB), R8
+	LOAD 5(R8), R8
+	LOAD -2(LB), R9
+	LOAD 4(R9), R9
+	LOAD -2(LB), R10
+	LOAD 5(R10), R10
+	ADD R10, R9
+	LOAD R9, R9
+	CMP #0x0.0p0, R9
+	BEQ DivisionByZeroException
+	DIV R9, R8
+	LOAD R8, R0
+	BRA fin.MiniGroup49.prcEtudiantPhelma
+fin.MiniGroup49.prcEtudiantPhelma:
+	RTS
+code.MiniGroup49.setNbrEtudiantEnsimag:
+	LOAD -3(LB), R8
+	FLOAT R8, R8
+	STORE R8, 4(R7)
+	BRA fin.MiniGroup49.setNbrEtudiantEnsimag
+fin.MiniGroup49.setNbrEtudiantEnsimag:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

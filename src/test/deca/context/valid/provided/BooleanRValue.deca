@@ -1,0 +1,6 @@
+// DESCRIPTION :Iinitialisation d'un boolean avec une epxression booléenne
+{
+    boolean a = true;
+    boolean b = false;
+    boolean c = (a == b);
+}

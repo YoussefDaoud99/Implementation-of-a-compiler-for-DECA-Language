@@ -1,0 +1,7 @@
+class A{
+  int a = 49;
+}
+{
+  A obj  = new A();
+  println(obj.a);
+}

@@ -1,0 +1,5 @@
+// DESCRIPTION: cast d'un entier en un boolean
+// RESULTAT: BadTypeCast.deca:4:13: Incompatible types for cast ! (3.39)
+{
+	boolean b = (boolean) (1);
+}

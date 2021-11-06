@@ -1,0 +1,3 @@
+// DESCRIPTION : faire un include du fichier lui-même
+// RESULTAT: Circular include for file AutoInclude.deca
+#include "AutoInclude.deca"

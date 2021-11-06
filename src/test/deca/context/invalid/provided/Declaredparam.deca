@@ -1,0 +1,6 @@
+// DESCRIPTION: déclaration d'un paramètre plusieurs fois
+// RESULTAT: Declaredparam.deca:4:21: Parameter is already used ! (3.13)
+class alpha{
+	void set(int a, int a){
+}
+}

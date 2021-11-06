@@ -1,0 +1,4 @@
+// DESCRIPTION: Déclaration de field avec fausse visibilité
+class test{
+  public int c = 4;
+  }

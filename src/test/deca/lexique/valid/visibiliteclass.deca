@@ -1,0 +1,6 @@
+class A {
+  protected int test = 5;
+  float f =1.2;
+  int z=f*test
+  println(,"valeur de z");
+  }

@@ -1,0 +1,9 @@
+// DESCRIPTION: utiliser new sur un type qui n'est pas une classe
+// RESULTAT: BadNew.deca:7:11: Instancied type must be a class ! (3.42)
+i
+
+class A {}
+
+{
+	A a = new int() ;
+}

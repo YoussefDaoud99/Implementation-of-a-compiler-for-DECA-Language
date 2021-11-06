@@ -1,0 +1,49 @@
+	TSTO #170
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+; Beginning of main instructions:
+	RFLOAT
+	PUSH R15
+	LOAD R1, R15
+	STORE R15, 217(GB)
+	LOAD 217(GB), R15
+	PUSH R15
+	LOAD #0x0.0p0, R15
+	POP R0
+	CMP R15, R0
+	SGE R15
+	PUSH R15
+	LOAD 217(GB), R15
+	PUSH R15
+	LOAD #0x1.4p2, R15
+	POP R0
+	CMP R15, R0
+	SLE R15
+	MUL R15, R15
+	CMP #0, R15
+	BEQ elseInst33
+	WSTR "x est dans l’intervalle [0.0, 5.0]"
+	BRA end33
+elseInst33:
+	WSTR "x n’est pas dans l’intervalle [0.0, 5.0]"
+end33:
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

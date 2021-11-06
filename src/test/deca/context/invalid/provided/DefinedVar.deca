@@ -1,0 +1,6 @@
+// DESCRIPTION: Définition d'une variable deux fois
+//RESULTAT: Variable is already defined ! (3.17)
+{
+ int a;
+ int a;
+}

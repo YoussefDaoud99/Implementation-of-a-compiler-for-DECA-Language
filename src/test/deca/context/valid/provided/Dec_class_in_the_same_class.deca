@@ -1,0 +1,7 @@
+// Descrption : on essaye d'ecrire un attribut de type class A dans la meme class
+// Resultats :
+//
+
+class A {
+    A a;
+}

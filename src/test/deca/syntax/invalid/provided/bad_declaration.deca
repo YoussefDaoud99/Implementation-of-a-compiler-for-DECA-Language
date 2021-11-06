@@ -1,0 +1,5 @@
+class test extends {
+  protected float a = 1.6;
+  public int c = 4;
+  protected bool b = true ;
+  }

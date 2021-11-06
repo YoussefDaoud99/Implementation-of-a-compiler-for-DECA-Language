@@ -1,0 +1,7 @@
+// DESCRIPTION: Or entre int et boolean
+// RESULTAT: Binary boolean operation must be between booleans (3.33)
+{
+ int a = 2;
+ boolean b = true;
+ boolean c = a || b;
+}

@@ -1,0 +1,52 @@
+// DESCRIPTION : Test multiple classes
+
+
+
+class X{
+    int x = 1;
+
+    int getX(){
+      return this.x;
+    }
+}
+
+
+class Y{
+    int y = 2;
+
+    int getY(){
+      return this.y ;
+    }
+}
+
+
+class Z{
+    int z = 3;
+
+    int getZ(){
+      return this.z;
+    }
+}
+
+
+class T{
+    int t = 4;
+
+    int getT(){
+      return this.t;
+    }
+}
+
+
+{
+
+X x = new X();
+Y y = new Y();
+Z z = new Z();
+T t = new T();
+int xx = x.getX();
+int yy = y.getY();
+int zz = z.getZ();
+int tt = t.getT();
+println(xx, yy, zz, tt);
+}

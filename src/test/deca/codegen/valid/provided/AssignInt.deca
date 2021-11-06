@@ -1,0 +1,5 @@
+// DESCRIPTION : Assignement d'entiers
+{
+   int a;
+   a = 3;
+}

@@ -1,0 +1,14 @@
+// DESCRIPTION : Toutes les opérations arithmétiques pour les INT
+// Résultat : 1
+{
+int a = 4;
+int b = 5;
+int c;
+c = 3*a + b/5 - 9;
+// c = 6
+c = c + 2*c + 3;
+// c = 15
+c = c % 2;
+// Resultat : c = 1
+print(c);
+}

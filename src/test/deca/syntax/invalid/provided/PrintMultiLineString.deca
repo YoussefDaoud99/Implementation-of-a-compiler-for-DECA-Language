@@ -1,0 +1,6 @@
+// DESCRIPTION: Print de plusieurs lignes
+{
+  print("(ツ)
+  (ツ)
+  (ツ)");
+}

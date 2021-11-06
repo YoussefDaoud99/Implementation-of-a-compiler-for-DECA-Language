@@ -1,0 +1,5 @@
+//DESCRIPTION: Une methode avec de mauvais argument
+class alpha{
+	void get(a){
+}
+}

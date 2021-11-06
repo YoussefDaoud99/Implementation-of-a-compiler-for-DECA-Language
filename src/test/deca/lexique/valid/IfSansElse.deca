@@ -1,0 +1,6 @@
+// DESCRIPTION : ifThenElse sans else
+{
+    if (true) {
+        print("(O,O)");
+    }
+}

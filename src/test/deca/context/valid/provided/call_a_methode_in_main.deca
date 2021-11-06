@@ -1,0 +1,21 @@
+// Descrption : on essaye de tester get et set dans un
+// Resultats :
+//
+
+class A {
+	int x ;
+	int get(){
+		return this.x ;
+	}
+	void set(int x){
+		this.x = x ;
+	}
+}
+
+{
+	int y ;
+	A a = new A() ;
+	a.set(1) ;
+	y = a.get()*2 ;
+	println(y); 
+}

@@ -1,0 +1,12 @@
+// DESCRIPTION : on test si l'heritage est bien efeectuer 
+
+class A {
+	int x ;
+}
+
+{
+	A a = new A(); 
+	if (a.x == 0) {
+		println("je dois etre afficher");
+	}
+}

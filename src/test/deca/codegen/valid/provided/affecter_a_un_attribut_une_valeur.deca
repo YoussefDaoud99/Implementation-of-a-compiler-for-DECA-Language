@@ -1,0 +1,20 @@
+// DESCRIPTION : affecter une valeur a une méthode
+
+class A {
+    int x;
+    void setNum(int a){
+      this.x = a;
+    }
+
+    int getNum(){
+      return this.x;
+    }
+}
+
+{
+    int num;
+    A a = new A();
+    a.setNum(0);
+    num = a.getNum();
+    print(num);
+}

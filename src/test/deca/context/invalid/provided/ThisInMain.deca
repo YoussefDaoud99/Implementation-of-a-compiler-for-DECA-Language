@@ -1,0 +1,12 @@
+// DESCRIPTION: utilisation de this dans le main
+// RESULTAT: 
+
+class A {
+	 int a ;
+}
+
+{
+         
+	this.a = 5 ;
+
+}

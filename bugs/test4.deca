@@ -1,0 +1,10 @@
+// Cast d'une valeur nulle. Le cast doit reussir.
+
+class A {
+}
+
+{
+	A a = new A();
+	a = (A)(null);
+	if (a == null) { println ("OK"); }
+}

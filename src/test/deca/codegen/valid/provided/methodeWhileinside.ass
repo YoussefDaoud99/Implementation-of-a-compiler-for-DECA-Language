@@ -1,0 +1,129 @@
+	TSTO #105
+	BOV StackOverFlowException
+; start main program
+; overflow test
+	BOV StackOverFlowException
+	ADDSP #102
+; Generation de la table des methodes
+	LOAD #null, R0
+	STORE R0, 126(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 127(GB)
+; generation des classes
+	LEA 1(GB), R0
+	STORE R0, 128(GB)
+	PUSH R15
+	LOAD code.Object.equals, R0
+	STORE R0, 129(GB)
+	LOAD code.A.testWhileIf, R0
+	STORE R0, 130(GB)
+; Main program
+; Declaration des variables:
+	PUSH R15
+	NEW #2, R15
+	BOV HeapOverFlowException
+	LEA 128(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.A
+	POP R15
+	POP R0
+	STORE R0, 131(GB)
+	TSTO #3
+	BOV StackOverflowException
+	ADDSP #1
+	PUSH R15
+	LOAD 131(GB), R15
+	PUSH R15
+	LOAD 0(R15), R15
+	BSR 2(R15)
+	LOAD R0, R15
+	SUBSP #1
+	POP R0
+	STORE R0, 132(GB)
+; Beginning of main instructions:
+	LOAD 132(GB), R1
+	WINT
+	WNL
+	HALT
+code.Object.equals:
+	LOAD -3(LB), R0
+	LOAD -2(LB), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; fields and methods generation
+init.A:
+	LOAD -2(LB), R1
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	LOAD R0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+	RTS
+	RTS
+code.A.testWhileIf:
+	PUSH R15
+	LOAD #0, R15
+	POP R0
+	STORE R0, 133(GB)
+cond5:
+	PUSH R15
+	LOAD 133(GB), R15
+	PUSH R15
+	LOAD #10, R15
+	POP R0
+	CMP R15, R0
+	SLT R15
+	CMP #0, R15
+	BEQ endWhile5
+	PUSH R15
+	LOAD 133(GB), R15
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	ADD R15, R0
+	LOAD R0, R15
+	STORE R15, 133(GB)
+	BRA cond5
+endWhile5:
+	LOAD 133(GB), R15
+	PUSH R15
+	LOAD #10, R15
+	POP R0
+	CMP R15, R0
+	SEQ R15
+	CMP #0, R15
+	BEQ elseInst31
+	PUSH R15
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	POP R0
+	LOAD R0, R0
+	BRA end31
+elseInst31:
+	PUSH R15
+	LOAD #0, R15
+	POP R0
+	LOAD R0, R0
+end31:
+	BRA fin.A.testWhileIf
+fin.A.testWhileIf:
+	RTS
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

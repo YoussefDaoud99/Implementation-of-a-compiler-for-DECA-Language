@@ -1,0 +1,4 @@
+// DESCRIPTION : readfloat d'un boolean
+{
+    boolean a = readFloat();
+}

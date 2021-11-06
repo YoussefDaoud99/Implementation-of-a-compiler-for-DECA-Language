@@ -1,0 +1,5 @@
+// DESCRIPTION: Type annocé et type d'initialisation différents
+//RESULTAT: Incompatible types ! (3.28)
+{
+    int a = 4.2;
+}

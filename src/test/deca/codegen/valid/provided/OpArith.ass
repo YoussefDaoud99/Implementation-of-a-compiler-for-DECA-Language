@@ -1,0 +1,92 @@
+	TSTO #143
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+	PUSH R15
+	LOAD #6, R15
+	POP R0
+	STORE R0, 172(GB)
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	STORE R0, 173(GB)
+	PUSH R15
+	LOAD 172(GB), R15
+	PUSH R15
+	LOAD 173(GB), R15
+	POP R0
+	ADD R15, R0
+	LOAD R0, R15
+	POP R0
+	STORE R0, 174(GB)
+	PUSH R15
+	LOAD 172(GB), R15
+	PUSH R15
+	LOAD 173(GB), R15
+	POP R0
+	SUB R15, R0
+	LOAD R0, R15
+	POP R0
+	STORE R0, 175(GB)
+	PUSH R15
+	LOAD 172(GB), R15
+	PUSH R15
+	LOAD 173(GB), R15
+	POP R0
+	MUL R15, R0
+	LOAD R0, R15
+	POP R0
+	STORE R0, 176(GB)
+	PUSH R15
+	LOAD 172(GB), R15
+	PUSH R15
+	LOAD 173(GB), R15
+	POP R0
+	PUSH R15
+	LOAD R15, R15
+	POP R0
+	CMP #0, R0
+	BEQ DivisionByZeroException
+	QUO R15, R0
+	LOAD R0, R15
+	POP R0
+	STORE R0, 177(GB)
+	PUSH R15
+	LOAD 172(GB), R15
+	PUSH R15
+	LOAD 173(GB), R15
+	POP R0
+	REM R15, R0
+	LOAD R0, R15
+	POP R0
+	STORE R0, 178(GB)
+; Beginning of main instructions:
+	LOAD 174(GB), R1
+	WINT
+	LOAD 175(GB), R1
+	WINT
+	LOAD 176(GB), R1
+	WINT
+	LOAD 177(GB), R1
+	WINT
+	LOAD 178(GB), R1
+	WINT
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

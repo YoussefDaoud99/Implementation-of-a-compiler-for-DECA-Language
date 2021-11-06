@@ -1,0 +1,10 @@
+// DESCRIPTION: Affectation d'un boolean  dans un entier
+// RESULTAT: affect-incompatible.deca:15:7: Incompatible types ! (3.28)
+
+{
+   int a;
+   boolean b;
+
+   // Doit etre refuse.
+   a = b;
+}

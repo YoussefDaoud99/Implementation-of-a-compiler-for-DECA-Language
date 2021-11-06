@@ -1,0 +1,5 @@
+// DESCRIPTION : fFloat en notation hexadécimale
+{
+    float i = 0x1.FFFFFEp0;
+    float j = 0x1.0p1;
+}

@@ -1,0 +1,16 @@
+class A{
+
+  protected int c ;
+  protected int b ;
+
+ int getc(){
+    return c ;
+}
+
+ void setb(int b) {
+   this.b = 1 ;
+}
+}
+
+
+ 

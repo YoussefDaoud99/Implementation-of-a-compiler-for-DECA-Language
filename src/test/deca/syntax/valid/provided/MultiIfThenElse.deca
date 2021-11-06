@@ -1,0 +1,14 @@
+// DESCRIPTION: IfThenElse multiples
+{
+    if (a) {
+        print("a");
+    } else if (b) {
+        print("b");
+    } else if (c) {
+        print("c");
+    } else if (d) {
+        print("d");
+    } else {
+        print("Rieeeen");
+    }
+}

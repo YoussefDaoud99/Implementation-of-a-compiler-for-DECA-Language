@@ -1,0 +1,6 @@
+//DESCRIPTION: Déclaration d'une méthode sans type de retour
+class test{
+  setx(){
+	}  
+}
+

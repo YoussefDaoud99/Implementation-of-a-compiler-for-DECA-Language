@@ -1,0 +1,65 @@
+	TSTO #153
+	BOV StackOverFlowException
+; start main program
+; Main program
+; Declaration des variables:
+; Beginning of main instructions:
+	LOAD #4, R15
+	PUSH R15
+	LOAD #4, R15
+	POP R0
+	CMP R15, R0
+	SEQ R15
+	STORE R15, 194(GB)
+	LOAD 194(GB), R15
+	PUSH R15
+	LOAD #1, R15
+	POP R0
+	CMP R15, R0
+	SEQ R15
+	CMP #0, R15
+	BEQ elseInst32
+	WSTR "true"
+	BRA end32
+elseInst32:
+end32:
+	PUSH R15
+	LOAD #2, R15
+	PUSH R15
+	LOAD #4, R15
+	POP R0
+	CMP R15, R0
+	SLE R15
+	STORE R15, 194(GB)
+	LOAD #4, R15
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	CMP R15, R0
+	SGE R15
+	STORE R15, 194(GB)
+	LOAD #4, R15
+	PUSH R15
+	LOAD #2, R15
+	POP R0
+	CMP R15, R0
+	SNE R15
+	STORE R15, 194(GB)
+	HALT
+; fields and methods generation
+DivisionByZeroException:
+	WSTR "DivisionByZeroException"
+	ERROR
+IOException:
+	WSTR "IOException"
+	ERROR
+StackOverFlowException:
+	WSTR "StackOverflowException"
+	ERROR
+OverFlowException:
+	WSTR "OverFlowException"
+	ERROR
+HeapOverFlowException:
+	WSTR "HeapOverFlowException"
+	ERROR
+; end main program

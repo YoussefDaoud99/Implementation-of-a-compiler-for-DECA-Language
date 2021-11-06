@@ -1,0 +1,25 @@
+// DESCRIPTION : Test while and If inside a class
+
+class A{
+
+  int x = 1;
+
+  int testWhileIf(){
+     int i = 0;
+     while (i < 10){
+        i = i + 1;
+     }
+     if( i == 10 ){
+        return this.x;
+     }
+     else{
+        return 0;
+     }
+  }
+}
+
+{
+  A a = new A();
+  int result = a.testWhileIf();
+  println(result);
+}

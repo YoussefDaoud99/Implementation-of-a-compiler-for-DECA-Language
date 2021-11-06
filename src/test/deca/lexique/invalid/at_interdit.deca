@@ -1,0 +1,11 @@
+// Description:
+//    ecrire @ dans un programme deca
+// Resultats:
+// Character entered is illegal !
+// Historique:
+//    cree le 01/01/2021
+
+{
+    bool c;
+    @;
+}
